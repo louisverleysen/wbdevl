@@ -3,19 +3,20 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $lijn = array();
-    $lijn["VluchtNr"] = $_POST["VluchtNr"];
-    $lijn["Vluchtdatum"] = $_POST["Vluchtdatum"];
-    $lijn["BestemmingID"] = $_POST["BestemmingID"];
-    $lijn["VliegtuigID"] = $_POST["VliegtuigID"];
+    $lijn["BoekID"] = $_POST["BoekID"];
+    $lijn["Schrijver"] = $_POST["Schrijver"];
+    $lijn["Type"] = $_POST["Type"];
+    $lijn["Genre"] = $_POST["Genre"];
+   
 
-    $result = CallAPI("POST", $DB . "/tblvlucht", json_encode($lijn));
+    $result = CallAPI("POST", $DB . "/tblboek", json_encode($lijn));
     
-    header("location:flight_view.php");
+    header("location:book_view.php");
     exit;
 } else {
-    $vliegtuigen = CallAPI("GET", $DB . "/tblvliegtuig");
-    $bestemmingen = CallAPI("GET", $DB . "/tblbestemming");
-    $vluchten = CallAPI("GET", $DB . "/tblvlucht");
+    $boeken = CallAPI("GET", $DB . "/tblboeken");
+    $informatie = CallAPI("GET", $DB . "/tblboekeninformatie");
+    $prijsinfo = CallAPI("GET", $DB . "/tblkostprijs");
 }
 ?>
 <?php require_once 'views/shared/_header.inc';?>
@@ -25,48 +26,48 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 </header>
 <main>
     <section id="summary" class="container">
-        <h1>Flight Creator</h1>
+        <h1>Book Creator</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
-                <label for="VluchtNr">VluchtNr</label>
+                <label for="BoekID">boeken-code</label>
 <?php
 $max = 0;
 
 //Zoek het grootste vluchtnummer.
-foreach ($vluchten as $vlucht) {
-    if ($vlucht["VluchtNr"] > $max) {
-        $max = $vlucht["VluchtNr"];
+foreach ($boeken as $boek) {
+    if ($boek["BoekID"] > $max) {
+        $max = $boek["BoekID"];
     }
 }
 ?>
                 <input type="number" class="form-control" name="VluchtNr" id="VluchtNr" value="<?php echo $max + 1; ?>" min="<?php echo $max + 1; ?>" readonly/>
             </div>
             <div class="form-group">
-                <label for="Vluchtdatum">Vluchtdatum</label>
-                <input type="date" class="form-control" name="Vluchtdatum" id="Vluchtdatum">
+                <label for="Schrijver">Schrijver</label>
+                <input type="date" class="form-control" name="Schrijver" id="Schrijver">
             </div>
             <div class="form-group">
-                <label for="BestemmingID">Bestemming</label>
-                <select class="form-control" name="BestemmingID" id="BestemmingID">
-                    <?php foreach ($bestemmingen as $bestemming) {?>
-                        <option value="<?php print($bestemming["BestemmingID"])?>">
-                            <?php print($bestemming["Voluit"])?>
+                <label for="Type">Type</label>
+                <select class="form-control" name="Type" id="Type">
+                    <?php foreach ($informatie as $info) {?>
+                        <option value="<?php print($info["Type"])?>">
+                            <?php print($info["PrijsVooBoek"])?>
                         </option>
                     <?php }?>
                 </select>
             </div>
             <div class="form-group">
-                <label for="VliegtuigID">Vliegtuig</label>
-                <select class="form-control" name="VliegtuigID" id="VliegtuigID">
-                <?php foreach ($vliegtuigen as $vliegtuig) {?>
-                        <option value="<?php print($vliegtuig["VliegtuigID"])?>">
-                            <?php print($vliegtuig["InterneCode"])?>
+                <label for="Genre">Genre</label>
+                <select class="form-control" name="Genre" id="Genre">
+                <?php foreach ($prijsinfo as $prijs) {?>
+                        <option value="<?php print($prijs["omschrijving"])?>">
+                            <?php print($prijs["Type"])?>
                         </option>
                     <?php }?>
                 </select>
             </div>
             <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Add Flight" />
+                <input class="btn btn-primary" type="submit" value="Add book" />
             </div>
         </form>
     </section>

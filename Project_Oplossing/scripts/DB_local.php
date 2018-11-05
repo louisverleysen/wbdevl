@@ -14,7 +14,7 @@ $request = explode('/', trim($_SERVER['PATH_INFO'], '/'));
 $input = json_decode(file_get_contents('php://input'), true);
 
 // verbinding maken met de database
-$link = mysqli_connect('localhost', 'vliegtuigen', 'vliegtuigen', 'vliegtuigen');
+$link = mysqli_connect('localhost', 'boeken', 'boeken', 'boekenbeurs');
 mysqli_set_charset($link, 'utf8');
 
 // het eerste element in $request is de table
@@ -64,7 +64,7 @@ if ($method === "POST" || $method === "PUT") {
 
 if ($method !== "POST" && !empty($key)) {
     // get the primary key column for the where clause
-    $keyQuery = "SHOW KEYS FROM `$table` WHERE Key_name = 'PRIMARY'";
+    $keyQuery = "SHOW KEYS FROM $table WHERE Key_name = 'PRIMARY'";
 // uitvoeren van onze query
     $result = mysqli_query($link, $keyQuery);
 
@@ -86,16 +86,16 @@ if ($method !== "POST" && !empty($key)) {
 // create SQL based on HTTP method
 switch ($method) {
     case 'GET':
-        $sql = "select * from `$table`" . ($key ? " WHERE $pk=$key" : '');
+        $sql = "select * from $table" . ($key ? " WHERE $pk=$key" : '');
         break;
     case 'PUT':
-        $sql = "update `$table` set $set where $pk=$key";
+        $sql = "update $table set $set where $pk=$key";
         break;
     case 'POST':
-        $sql = "insert into `$table` set $set";
+        $sql = "insert into $table set $set";
         break;
     case 'DELETE':
-        $sql = "delete from `$table` where $pk=$key";
+        $sql = "delete from $table where $pk=$key";
         break;
 }
 
