@@ -5,18 +5,20 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $lijn = array();
     $lijn["BoekID"] = $_POST["BoekID"];
     $lijn["Schrijver"] = $_POST["Schrijver"];
+    $lijn["Titel"] = $_POST["Titel"];
     $lijn["Type"] = $_POST["Type"];
     $lijn["Genre"] = $_POST["Genre"];
    
 
-    $result = CallAPI("POST", $DB . "/tblboek", json_encode($lijn));
+    $result = CallAPI("POST", $DB . "/tblboeken", json_encode($lijn));
     
     header("location:book_view.php");
     exit;
 } else {
     $boeken = CallAPI("GET", $DB . "/tblboeken");
-    $informatie = CallAPI("GET", $DB . "/tblboekeninformatie");
-    $prijsinfo = CallAPI("GET", $DB . "/tblkostprijs");
+    $informatie = CallAPI("GET", $DB . "/tblboekinformatie");
+
+    
 }
 ?>
 <?php require_once 'views/shared/_header.inc';?>
@@ -26,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 </header>
 <main>
     <section id="summary" class="container">
-        <h1>Book Creator</h1>
+        <h1>Boeken toevoegen</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
                 <label for="BoekID">boeken-code</label>
@@ -40,18 +42,22 @@ foreach ($boeken as $boek) {
     }
 }
 ?>
-                <input type="number" class="form-control" name="VluchtNr" id="VluchtNr" value="<?php echo $max + 1; ?>" min="<?php echo $max + 1; ?>" readonly/>
+                <input type="number" class="form-control" name="BoekID" id="BoekID" value="<?php echo $max + 1; ?>" min="<?php echo $max + 1; ?>" readonly/>
             </div>
             <div class="form-group">
                 <label for="Schrijver">Schrijver</label>
-                <input type="date" class="form-control" name="Schrijver" id="Schrijver">
+                <input type="text" class="form-control" name="Schrijver" id="Schrijver">
+            </div>
+            <div class="form-group">
+                <label for="Titel">Titel</label>
+                <input type="text" class="form-control" name="Titel" id="Titel">
             </div>
             <div class="form-group">
                 <label for="Type">Type</label>
                 <select class="form-control" name="Type" id="Type">
-                    <?php foreach ($informatie as $info) {?>
-                        <option value="<?php print($info["Type"])?>">
-                            <?php print($info["PrijsVooBoek"])?>
+                    <?php foreach ($boeken as $boek) {?>
+                        <option value="<?php print($boek["Type"])?>">
+                            <?php print($boek["Type"])?>
                         </option>
                     <?php }?>
                 </select>
@@ -59,15 +65,15 @@ foreach ($boeken as $boek) {
             <div class="form-group">
                 <label for="Genre">Genre</label>
                 <select class="form-control" name="Genre" id="Genre">
-                <?php foreach ($prijsinfo as $prijs) {?>
-                        <option value="<?php print($prijs["omschrijving"])?>">
-                            <?php print($prijs["Type"])?>
+                <?php foreach ($boeken as $boek) {?>
+                        <option value="<?php print($boek["Genre"])?>">
+                            <?php print($boek["Genre"])?>
                         </option>
                     <?php }?>
                 </select>
             </div>
             <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="Add book" />
+                <input class="btn btn-primary" type="submit" value="ADD Boek" />
             </div>
         </form>
     </section>

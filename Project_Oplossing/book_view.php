@@ -77,11 +77,11 @@ if (!empty($_GET["edit"])) {
 <?php
 //Overlopen van de vluchten en tonen van de gegevens.
 foreach ($boeken as $boek) {
-    $info = findInArray($informatie,$boek["BoekID"],"BoekID")?>
+    ?>
                 <tr>
                     <td><?php print($boek["BoekID"])?></td>
                     <td><?php print($boek["Schrijver"])?></td>
-                    <td><?php print($informatie[$info]["Titel"])?></td>
+                    <td><?php print($boek["Titel"])?></td>
                     <td><?php print($boek["Type"])?></td>
                     <td><?php print($boek["Genre"])?></td>
 

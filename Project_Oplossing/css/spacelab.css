@@ -85,7 +85,9 @@ body {
     line-height: 1.5;
     color: #777;
     text-align: left;
-    background-color: #fff
+    background-color: #fff;
+
+
 }
 
 [tabindex="-1"]:focus {
@@ -106,7 +108,8 @@ h4,
 h5,
 h6 {
     margin-top: 0;
-    margin-bottom: 0.5rem
+    margin-bottom: 0.5rem;
+
 }
 
 p {

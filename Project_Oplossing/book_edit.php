@@ -1,0 +1,51 @@
+<?php require_once 'scripts/config.php';?>
+<?php require_once 'scripts/api.php';?>
+<?php
+if(!empty($_GET["boekid"])){
+    $boeken =  CallAPI("GET", $DB ."/tblboeken");
+    $vlucht = CallAPI("GET", $DB ."/tblboeken/".$_GET["boekid"]);
+}
+    else{
+    if($_SERVER['REQUEST_METHOD']==="POST"){
+        $lijn = array();
+        $lijn["BoekID"] = $_POST["BoekID"];
+        $lijn["Schrijver"] = $_POST["Schrijver"];
+        $lijn["Titel"] = $_POST["Titel"];
+        $lijn["Type"] = $_POST["Type"];
+        $lijn["Genre"] = $_POST["Genre"];
+
+        $result = CallAPI("PUT", $DB ."/tblboeken/".$_POST["BoekID"], json_encode($lijn));
+        //print($result);
+        if($result == "1"){
+            header("location:book_view.php?edit=yes");
+        }
+        else{
+            header("location:book_view.php?edit=no");
+        }
+        exit;
+    }
+}
+?>
+<?php require_once 'views/shared/_header.inc';?>
+
+<body>
+<header>
+<?php include 'views/shared/_nav.inc';?>
+</header>
+<main>
+<section id="summary" class="container">
+    <h1>Boek aanpassen</h1>
+    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <div class="form-group">
+            <label for="BoekID">Boek nummer</label>
+            <input type="number" class="form-control" name="BoekID" id="BoekID" value="<?php print $vlucht["BoekID"] ?>" readonly />
+        </div>
+        <div class="form-group">
+            <label for="Schrijver">Schrijver</label>
+            <input type="text" class="form-control" name="Schrijver" id="Schrijver" value="<?php echo $vlucht["Schrijver"] ?>">
+        </div>
+        <div class="form-group">
+            <label for="Titel">Titel</label>
+            <input type="text" class="form-control" name="Titel" id="Titel" value="<?php echo $vlucht["Titel"] ?>">
+        </div>
+

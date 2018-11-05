@@ -16,7 +16,26 @@
                     <a class="dropdown-item" href="book_view.php">boeken tonen</a>
                     <a class="dropdown-item" href="book_create.php">boeken toevoegen</a>
                 </div>
+                
+            </li>
+            
+        </ul>
+    </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    boek vinden
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="">biblotheken</a>
+                    <a class="dropdown-item" href="">Winkels</a>
+                    <a class="dropdown-item" href="">verkooppunt toevoegen</a>
+                </div>
             </li>
         </ul>
     </div>
+
 </nav>
+ 
