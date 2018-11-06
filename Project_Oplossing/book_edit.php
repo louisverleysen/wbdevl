@@ -32,20 +32,3 @@ if(!empty($_GET["boekid"])){
 <header>
 <?php include 'views/shared/_nav.inc';?>
 </header>
-<main>
-<section id="summary" class="container">
-    <h1>Boek aanpassen</h1>
-    <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-        <div class="form-group">
-            <label for="BoekID">Boek nummer</label>
-            <input type="number" class="form-control" name="BoekID" id="BoekID" value="<?php print $vlucht["BoekID"] ?>" readonly />
-        </div>
-        <div class="form-group">
-            <label for="Schrijver">Schrijver</label>
-            <input type="text" class="form-control" name="Schrijver" id="Schrijver" value="<?php echo $vlucht["Schrijver"] ?>">
-        </div>
-        <div class="form-group">
-            <label for="Titel">Titel</label>
-            <input type="text" class="form-control" name="Titel" id="Titel" value="<?php echo $vlucht["Titel"] ?>">
-        </div>
-
