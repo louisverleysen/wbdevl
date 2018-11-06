@@ -2,8 +2,8 @@
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';
 
-if (!empty($_GET["BoekID"])) {
-    $boeknummer = $_GET["BoekID"];
+if (!empty($_GET["boekID"])) {
+    $boeknummer = $_GET["boekID"];
     $test = CallAPI("DELETE", $DB . "/tblboeken/" . $boeknummer);
     print($test);
     if ($test != 0) {

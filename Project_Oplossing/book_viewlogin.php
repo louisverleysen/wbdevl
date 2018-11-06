@@ -18,7 +18,7 @@ function findInArray($arr, $value, $column = 0)
 <?php include_once 'views/shared/_header.inc';?>
 <body>
 <header>
-    <?php include_once 'views/shared/_nav.inc';?>
+    <?php include_once 'views/shared/_navinlog.inc';?>
 </header>
 <main>
     <section id="summary" class="container">
@@ -67,8 +67,8 @@ if (!empty($_GET["edit"])) {
                     <th>Titel</th>
                     <th>Type</th>
                     <th>like/dislike</th>
-                    <!--<th>Delete</th>
-                    <th>Edit</th>-->
+                    <th>Delete</th>
+                    <th>Edit</th>
                 </tr>
             </thead>
             <tbody>
@@ -92,8 +92,8 @@ foreach ($boeken as $boek) {
                         <?php print($boek["Disliked"])?>
                     </td>
                     
-                    <!--<td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>-->
-                    <!--<td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td>-->
+                    <td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>
+                    <td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td>
                 </tr>
 <?php
 }

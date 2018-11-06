@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.php">De boeken hoek</a>
+  <a class="navbar-brand" href="ingelogt.php">De boeken hoek</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -11,8 +11,8 @@
           Boeken info
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="book_view.php">boeken tonen</a>
-                    <!--<a class="dropdown-item" href="book_create.php">boeken toevoegen</a>-->
+                    <a class="dropdown-item" href="book_viewlogin.php">boeken tonen</a>
+                    <a class="dropdown-item" href="book_create.php">boeken toevoegen</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -22,15 +22,16 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="show_bib.php">biblotheken</a>
-                    <a class="dropdown-item" href="show_boeken_winkel.php">boeken Winkels</a>
-                    <!--<a class="dropdown-item" href="bib_winkel_add.php">Winkel/Bib toevoegen</a>-->
+                    <a class="dropdown-item" href="show_boeken_winkel.php">boeken Winkel</a>
+                    <a class="dropdown-item" href="bib_add.php">Winkel toevoegen</a>
+                    <a class="dropdown-item" href="bib_winkel_add.php">Bib toevoegen</a>
+
                 </div>
             </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-        <button class="btn btn-outline-success my-2 my-sm-0 m-4" type="submit" > <a href="klanttoevoegen.php">Registreer <i class="fas fa-user-plus"></i></a> </button>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" > <a href="login.php">login <i class="fas fa-sign-in-alt"></i></a> </button>
+        
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" > <a href="logout.php">logout <i class="fas fa-sign-out-alt"></i></a> </button>
     </form>
   </div>
 </nav>
- 

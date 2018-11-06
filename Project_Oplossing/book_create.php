@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <?php require_once 'views/shared/_header.inc';?>
 <body>
 <header>
-	<?php include 'views/shared/_nav.inc';?>
+	<?php include 'views/shared/_navinlog.inc';?>
 </header>
 <main>
     <section id="summary" class="container">
@@ -62,16 +62,7 @@ foreach ($boeken as $boek) {
                     <?php }?>
                 </select>
             </div>
-            <div class="form-group">
-                <label for="Genre">Genre</label>
-                <select class="form-control" name="Genre" id="Genre">
-                <?php foreach ($boeken as $boek) {?>
-                        <option value="<?php print($boek["Genre"])?>">
-                            <?php print($boek["Genre"])?>
-                        </option>
-                    <?php }?>
-                </select>
-            </div>
+           
             <div class="form-group">
                 <input class="btn btn-primary" type="submit" value="ADD Boek" />
             </div>
