@@ -2,3 +2,6 @@ main {
     min-height: 800px;
 }
 
+body {
+    margin-top: 20px;
+}

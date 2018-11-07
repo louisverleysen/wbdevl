@@ -5,17 +5,16 @@
 <?php require_once 'views/shared/_header.inc';?>
 <body>
 <header>
-	<?php include 'views/shared/_nav.inc';?>
+	<?php include 'views/shared/_navinlog.inc';?>
 </header>
 <head>
-<?php include 'views/shared/_head_winkel.inc';?>
+  <?php include 'views/shared/_head_bib.inc';?>
 </head>
 <main>
-<div class="container">
-<h1 class="my-4">Boeken winkels
+<h1 class="my-4">Bibliotheken
         <small>in de buurt</small>
       </h1>
-      <div class="row">
+	  <div class="row">
         <div class="col-lg-4 col-sm-6 portfolio-item">
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
@@ -58,11 +57,5 @@
 
 </div>
 </main>
-
-
-</main>  
-</body>
-
-
 
 <?php include_once 'views/shared/_footer.inc';?>

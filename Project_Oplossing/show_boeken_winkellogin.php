@@ -5,7 +5,7 @@
 <?php require_once 'views/shared/_header.inc';?>
 <body>
 <header>
-	<?php include 'views/shared/_nav.inc';?>
+	<?php include 'views/shared/_navinlog.inc';?>
 </header>
 <head>
 <?php include 'views/shared/_head_winkel.inc';?>

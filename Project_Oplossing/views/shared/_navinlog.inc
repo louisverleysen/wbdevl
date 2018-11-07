@@ -21,10 +21,10 @@
                     Boek vinden
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="show_bib.php">biblotheken</a>
-                    <a class="dropdown-item" href="show_boeken_winkel.php">boeken Winkel</a>
-                    <a class="dropdown-item" href="bib_add.php">Winkel toevoegen</a>
-                    <a class="dropdown-item" href="bib_winkel_add.php">Bib toevoegen</a>
+                    <a class="dropdown-item" href="show_biblogin.php">biblotheken</a>
+                    <a class="dropdown-item" href="show_boeken_winkellogin.php">boeken Winkel</a>
+                    <a class="dropdown-item" href="winkel_toevoegen.php">Winkel toevoegen</a>
+                    <a class="dropdown-item" href="bib_toevoegen.php">Bib toevoegen</a>
 
                 </div>
             </li>
