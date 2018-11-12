@@ -1,6 +1,40 @@
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';?>
+<?php
+$login = CallAPI("GET", $DB . "/tblklant");
+session_start();
+?>
+<?php
+//POST ophalen indien de pagina gepost is
+if(!empty($_POST)){
+    print_r($_POST);
 
+    if(!empty($_POST["Email"]) && array_key_exists($_POST["Email"],$login))
+    {
+        //login bestaat
+        print("login gevonden ");
+    
+    //contSZroleren of de login en paswoord overeen komen
+    $login = $_POST['Email'];
+
+    if($Logins[$login][2]==md5($_POST["pwd"])){
+        //print("login en pwd OK");
+        $tijd = 0;
+        if(!empty($_POST['keep'])){
+            $tijd = time() + (31*24*60*60);
+        }
+        setcookie ("login",$login, $tijd);
+        header("location:ingelogt.php");
+        exit;
+    }
+}
+    else{
+        print("Login niet gevonden");
+    }
+}
+
+
+?>
 
 <?php require_once 'views/shared/_header.inc';?>
 <body>
@@ -21,16 +55,24 @@
 
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form>
-                            <div class="form-group">
-                                <label class="form-control-label">EMAIL</label>
-                                <input type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-control-label">PASWOORD</label>
-                                <input type="password" class="form-control" i>
-                            </div>
 
+                        <form method="POST" action="<?php print($_SERVER['PHP_SELF']);?>" >
+                            <div class="form-group">
+                                <label class="form-control-label" for="Email">EMAIL</label>
+                                <input type="text" id="Email" name="Email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-control-label" for="pwd" >PASWOORD</label>
+                                <input type="password" id="pwd" name="pwd" class="form-control" placeholder="paswoord">
+                            </div>
+                            <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text">
+                                    <input name="keep" id="keep" type="checkbox" for="keep" value="keep">
+                                </div>
+                            </div>
+                            <label class="form-control"for="keep">ingelogd blijven</label>
+                        </div>
                             <div class="col-lg-12 loginbttm">
                                 <div class="col-lg-6 login-btm login-text">
                                     <!-- Error Message -->

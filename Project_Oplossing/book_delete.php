@@ -1,6 +1,7 @@
-
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';
+
+
 
 if (!empty($_GET["boekID"])) {
     $boeknummer = $_GET["boekID"];

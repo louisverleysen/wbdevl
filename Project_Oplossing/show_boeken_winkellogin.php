@@ -1,6 +1,21 @@
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';?>
+<?php
+$boekenwinkel = CallAPI("GET", $DB . "/tblwinkel");
 
+
+function findInArray($arr, $value, $column = 0)
+{
+    $nr = 0;
+    foreach ($arr as $item) {
+        if ($item[$column] == $value) {
+            return $nr;
+        }
+        $nr++;
+    }
+}
+
+?>
 
 <?php require_once 'views/shared/_header.inc';?>
 <body>
@@ -16,19 +31,24 @@
         <small>in de buurt</small>
       </h1>
       <div class="row">
+    <?php
+        foreach($boekenwinkel as $winkel){
+        ?>
         <div class="col-lg-4 col-sm-6 portfolio-item">
+        
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+            <a href="#"><img class="card-img-top" src="images/<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
             <div class="card-body">
-              <h4 class="card-title">
-                <a href="#">Project One</a>
-              </h4>
-              <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet numquam aspernatur eum quasi sapiente nesciunt? Voluptatibus sit, repellat sequi itaque deserunt, dolores in, nesciunt, illum tempora ex quae? Nihil, dolorem!</p>
-			  <a class="btn btn-success btn-lg" href="#" role="button">Bischikbare Boeken</a>
-			</div>
+              <h4 class="card-title"><?php print($winkel["Naam"]);?></h4>
+              <p class="card-text"><?php print($winkel["Description"]); ?></p>
+			  <a class="btn btn-info btn-lg" href="toon_boeken_winkel" role="button">aantal boeken <?php print($winkel["aantal"]); ?></a>
           </div>
+          </div>          
         </div>
-          </div>
+        <?php } ?>
+      </div>    
+      
+</div>  >
         </div>
 
 	  <div>
