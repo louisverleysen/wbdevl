@@ -47,7 +47,7 @@ function findInArray($arr, $value, $column = 0)
                          $book = findInArray($boeken, $info["BoekID"], "BoekID");
                             ?>
                     <div class="row">
-                        <div class=" col-md-5"><img src=""
+                        <div class=" col-md-5"><img src="<?php print($info["image"])?>"
                                 alt="foto4" width="100%"></div>
                       
                         <div class=" col-md-7 hidden-lg">
@@ -105,7 +105,7 @@ function findInArray($arr, $value, $column = 0)
         </div>
     </section>
     <div class="accordion container" id="accordionExample">
-  <div class="card">
+  <div class="card m-2 ">
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
