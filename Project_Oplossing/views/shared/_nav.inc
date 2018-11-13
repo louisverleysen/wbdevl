@@ -12,7 +12,7 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="book_view.php">boeken tonen</a>
-                    <a class="dropdown-item" href="infoboek.php">info boeken</a>
+                    <a class="dropdown-item" href="infoboek.php">alle boeken informatie</a>
                     <!--<a class="dropdown-item" href="book_create.php">boeken toevoegen</a>-->
         </div>
       </li>

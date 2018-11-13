@@ -2,6 +2,7 @@
 <?php require_once 'scripts/api.php';?>
 <?php
 $boekenwinkel = CallAPI("GET", $DB . "/tblwinkel");
+$boeken = CallAPI("GET", $DB . "/tblboeken");
 
 
 function findInArray($arr, $value, $column = 0)
@@ -37,14 +38,14 @@ function findInArray($arr, $value, $column = 0)
     <?php
         foreach($boekenwinkel as $winkel){
         ?>
-        <div class="col-lg-4 col-sm-6 portfolio-item">
+        <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
         
           <div class="card h-100">
             <a href="#"><img class="card-img-top" src="images/<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($winkel["Naam"]);?></h4>
               <p class="card-text"><?php print($winkel["Description"]); ?></p>
-			  <a class="btn btn-info btn-lg" href="toon_boeken_winkel" role="button">aantal boeken <?php print($winkel["aantal"]); ?></a>
+			  <a class="btn btn-info btn-lg" href="toon_boeken_in_winkel.php" role="button">beschikbare boeken <?php print($winkel["aantal"]); ?></a>
           </div>
           </div>          
         </div>
@@ -53,7 +54,7 @@ function findInArray($arr, $value, $column = 0)
       
 </div>  
 
-	  <div>
+	  <div class="pt-4">
       <ul class="pagination justify-content-center">
         <li class="page-item">
           <a class="page-link" href="#" aria-label="Previous">

@@ -22,16 +22,10 @@ function findInArray($arr, $value, $column = 0)
 </header>
 <main>
     <section id="summary" class="container">
-    <div class="jumbotron primary mb-0 rounded-0">
-    <h1 class="display-3 font-weight-bold">Bosnian Cuisine</h1>
-    <p class="lead">Traditional Bosnian food is often prepared with meat, and meals are plentiful and delicious. The meat is of extraordinary quality, often organic, and well prepared.</p>
-    <hr class="my-4">
-    <p>Food and Drink in Bosnia and Herzegovina</p>
-    <p class="lead">
-      <a class="btn btn-success btn-lg" href="#" role="button">Learn more</a>
-    </p>
-  </div>
-</div>
+<head>
+<?php include 'views/shared/_head_boeken.inc';?>
+</head>
+ 
 <?php
 //Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
 if (!empty($_GET["delete"])) {

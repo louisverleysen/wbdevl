@@ -2,10 +2,26 @@
 <?php include_once 'scripts/api.php';?>
 
 
+                    
+                <?php
+
+$boekeninfo = CallAPI("GET", $DB . "/tblboekeninfo");
+$boeken = CallAPI("GET", $DB . "/tblboeken");
 
 
 
 
+function findInArray($arr, $value, $column = 0)
+{
+    $nr = 0;
+    foreach ($arr as $item) {
+        if ($item[$column] == $value) {
+            return $nr;
+        }
+        $nr++;
+    }
+}
+?>
 <?php include_once 'views/shared/_header.inc';?>
 <body>
 <header>
@@ -15,9 +31,8 @@
         <div class="container">
             <div class="jumbotron jumbotron-fluid mt-3">
                 <div class="container mb-3">
-                    <h1 class="display-4 text-centre">Fluid jumbotron</h1>
-                    <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its
-                        parent.</p>
+                    <h1 class="display-4 text-centre">detail informatie</h1>
+                    <p class="lead">"A bookstore is one of the only pieces of evidence we have that people are still thinking"</p>
                 </div>
             </div>
         </div>
@@ -26,23 +41,67 @@
         <div class="container">
             <div class="creation">
                 <div class="content">
+                <?php
+                    //Overlopen van de vluchten en tonen van de gegevens.
+                   foreach ($boekeninfo as $info) {
+                         $book = findInArray($boeken, $info["BoekID"], "BoekID");
+                            ?>
                     <div class="row">
                         <div class=" col-md-5"><img src=""
-                                alt="foto1" width="100%"></div>
+                                alt="foto4" width="100%"></div>
+                      
                         <div class=" col-md-7 hidden-lg">
-                            <h1>naam boek</h1>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum numquam corporis
-                                veritatis blanditiis amet sed, repudiandae est. Quo itaque officiis nihil id provident
-                                voluptas eveniet, ipsam, autem velit consequatur cupiditate!</p>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo iste saepe nisi
-                                perspiciatis ab eos sint expedita! Molestias delectus excepturi, sit doloremque
-                                expedita autem non enim alias corporis quos fuga.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
+                   <h1><?php print($boeken[$book]["Titel"])?></h1>
+                            <table class="table table-bordered">
+
+
+  <thead>
+    <tr>
+      <th scope="col" style="width: 170px">info</th>
+      <th scope="col">specificaties</th>
+    </tr>
+  </thead>
+  <tbody>
+  <tr>
+      <th scope="row">Schrijver</th>
+      <td><?php print($boeken[$book]["Schrijver"])?></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Publicatiedatum:</th>
+      <td><?php print($info["Publicatiedatum"])?></td>
+      
+    </tr>
+    
+    <tr>
+      <th scope="row">pagina's</th>
+      <td><?php print($info["Pagina"])?></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Uitgever</th>
+      <td><?php print($info["Uitgever"])?></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Ondertitel</th>
+      <td><?php print($info["Ondertitel"])?></td>
+      
+    </tr>
+    <tr>
+      <th scope="row">Uitvoering</th>
+      <td><?php print($info["Uitvoering"])?></td>
+      
+    </tr>
+    
+  </tbody>
+</table>
+               
+</div>
+
+</div>
+</div>
+</div>
         </div>
     </section>
     <div class="accordion container" id="accordionExample">
@@ -54,15 +113,17 @@
         </button>
       </h5>
     </div>
-
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-      </div>
+    <p><?php print($info["omschrijving"])?></p>
     </div>
+    
   </div>
     </div>
+    <?php } ?>  
   </div>
+  
 </div>
+
 </body>
 <?php include_once 'views/shared/_footer.inc';?>
