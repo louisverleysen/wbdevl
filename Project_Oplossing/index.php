@@ -22,28 +22,37 @@
 			 <hr>
 			 <div class="row">
 			 	<div class="col-sm-4 pb-4">
-			 		<img src="images/home/Boeken-Bieb.jpg" alt="bib" class="img-fluid">
+			 		<img src="" alt="bib" class="img-fluid">
+					 <a href="">boeken</a>
 			 	</div>
 			 	<div class="col-sm-4 pb-4">
-			 		<img src="images/home/7.jpg" alt="boeken" class="img-fluid">
+			 		<img src="" alt="boeken" class="img-fluid">
+					 <a href="">bibliotheken</a>
 			 	</div>
 			 	<div class="col-sm-4 pb-4">
-			 		<img src="images/home/bib.jpg" alt="boeken store" class="img-fluid">
+			 		<img src="" alt="boeken store" class="img-fluid">
+					 <a href="">boeken winkel</a>
 			 	</div>
 			 	<div class="col-sm-4">
-			 		<img src="Assets/Assets/game.png" alt="" class="img-fluid">
+			 		<img src="Assets/Assets/game.png" alt="lezen" class="img-fluid">
+					 <a href="">het nut van lezen</a>
 			 	</div>
 			 	<div class="col-sm-4">
-			 		<img src="Assets/Assets/safe.png" alt="" class="img-fluid">
+			 		<img src="Assets/Assets/safe.png" alt="geschiedins" class="img-fluid">
+					 <a href="">geschidenins van het boek</a>
 			 	</div>
 			 	<div class="col-sm-4">
-			 		<img src="Assets/Assets/submarine.png" alt="" class="img-fluid">
+			 		<img src="Assets/Assets/submarine.png" alt="contact" class="img-fluid">
+					 <a href="">Contact</a>
 			 	</div>
 			 </div>
 			 </div>
 			</section>
+			</main>
+
+<footer>
+<?php include_once 'views/shared/_footer.inc';?>
+</footer>
 
 </body>
 </html>
-</main>
-<?php include_once 'views/shared/_footer.inc';?>
