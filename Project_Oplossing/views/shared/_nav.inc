@@ -38,7 +38,6 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="nut_van_lezen.php">Algemeen nut van lezen</a>
-                    <a class="dropdown-item" href="geschiedenis.php">Geschiedenis van het boek</a>
                     <a class="dropdown-item" href="weetjes.php">boeken Weetjes</a>
                     <a class="dropdown-item" href="contact.php">Contact</a>
                     <!--<a class="dropdown-item" href="book_create.php">boeken toevoegen</a>-->
