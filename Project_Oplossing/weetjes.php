@@ -25,14 +25,14 @@ function findInArray($arr, $value, $column = 0)
 </head>
 <main>
 <div class="container">
-
-<div class="post_content">
-
-      <div class="row">
-      <?php
+<?php
 //Overlopen van de vluchten en tonen van de gegevens.
 foreach ($weetjes as $weetje) {
     ?>
+<div class="post_content">
+
+      <div class="row">
+
         <div class="col-md-8">
    
           <h1 class="my-4"><?php print($weetje["hood_t"])?></h1>
@@ -47,9 +47,10 @@ foreach ($weetjes as $weetje) {
           </div>
           
         </div>
-
-<?php } ?>
+        </div>
         
+        
+        <?php } ?>
         <!-- Sidebar Widgets Column -->
         <div class="col-md-4">
           <!-- Categories Widget -->
@@ -101,7 +102,7 @@ foreach ($weetjes as $weetje) {
           </div>
           
        
-       
+          
        
        
         </div>   

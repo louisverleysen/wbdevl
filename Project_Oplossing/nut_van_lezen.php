@@ -2,7 +2,7 @@
 <?php include_once 'scripts/api.php';?>
 <?php
 
-$weetjes = CallAPI("GET", $DB . "/tbllezen");
+$lezen = CallAPI("GET", $DB . "/tbllezen");
 
 function findInArray($arr, $value, $column = 0)
 {
@@ -31,17 +31,20 @@ function findInArray($arr, $value, $column = 0)
         <div class="container">
             <div class="creation">
                 <div class="content">
+                <?php
+         //Overlopen van de vluchten en tonen van de gegevens.
+        foreach ($lezen as $lees) {
+         ?>
                     <div class="row">
-                        <div class=" col-md-5"><img src=""
-                                alt="foto4" width="100%"></div>
-                      
+                        <div class=" col-md-5"><img src="<?php print($lees["image"])?>" alt="foto4" width="100%"></div>
                         <div class=" col-md-7 hidden-lg">
-                   <h1>titel1</h1>
-                   <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam quibusdam recusandae eveniet obcaecati quod nisi. Distinctio minus in error quasi blanditiis laborum modi, dolore incidunt officiis adipisci reprehenderit et sunt!</div>
+                   <h1><?php print($lees["title"])?></h1>
+                   <div><?php print($lees["inhoud"])?></div>
                       
                
                 </div>
             </div>
+        <?php } ?>
         </div>
     </div>
 </div>

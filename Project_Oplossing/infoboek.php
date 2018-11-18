@@ -42,10 +42,11 @@ function findInArray($arr, $value, $column = 0)
             <div class="creation">
                 <div class="content">
                 <?php
+                $iTeller=1;
                     //Overlopen van de vluchten en tonen van de gegevens.
                    foreach ($boekeninfo as $info) {
                          $book = findInArray($boeken, $info["BoekID"], "BoekID");
-                            ?>
+                        ?>
                     <div class="row">
                         <div class=" col-md-5"><img src="<?php print($info["image"])?>"
                                 alt="foto4" width="100%"></div>
