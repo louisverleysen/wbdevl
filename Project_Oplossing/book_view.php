@@ -81,7 +81,7 @@ if (!empty($_GET["edit"])) {
 foreach ($boeken as $boek) {
     ?>
                 <tr> 
-                    <td><?php print($boek["BoekID"])?></td>
+                    <td><u><?php print($boek["BoekID"])?></u></td>
                     <td><?php print($boek["Schrijver"])?></td>
                     <td><?php print($boek["Titel"])?></td>
                     <td><?php print($boek["Type"])?></td>
@@ -96,7 +96,7 @@ foreach ($boeken as $boek) {
                         <?php print($boek["Disliked"])?>
                     </td>
                     <td>
-                    <a href="infoboek_per_id.php?id<?php print($boek["BoekID"])?>"><button type="button" class="btn btn-info">Details...</button></a>
+                    <a  href="infoboek_per_id.php?id<?php print($boek["BoekID"])?>"><button type="button" class="btn btn-info">Details...</button></a>
                     </td>
                     
                     <!--<td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>-->

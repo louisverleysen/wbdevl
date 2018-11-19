@@ -24,11 +24,11 @@ function findInArray($arr, $value, $column = 0)
 <section id="summary" class="container pt-4">
 <div class="jumbotron primary mb-0 rounded-0" id="indexjumbo">
     <h1 class="display-3 font-weight-bold">de boeken hoek</h1>
-    <p class="lead">"There is more treasure in books than in all the pirate's loot on teasure island".</p>
-    <hr class="my-4">
-    <p>Er zitten meer schatten in boeken dan in alle piratenbuit op Schatteneiland.</p>
+    <p class="cursief">"There is more treasure in books than in all the pirate's loot on teasure island".</p>
+    <hr class="my-4 mb-2">
+    <p>Er zitten meer schatten in boeken dan in alle piratenbuiten op Schatteneiland.</p>
     <p class="lead">
-      <a class="btn btn-success btn-lg" href=book_view.php role="button">Boeken overzicht</a>
+      <a class="btn1 btn-lg " href=book_view.php role="button">Boeken overzicht</a>
     </p>
     </section>
 
@@ -43,7 +43,7 @@ foreach ($homeindex as $home) {
     ?>
 			 	<div class="col-sm-4 pb-4">
 			 		<img src="<?php print($home["image"])?>" alt="bib" class="img-fluid">
-					<a href=""><?php print($home["titel"])?></a>
+					<a class="tekst" href=""><?php print($home["titel"])?></a>
 			 	</div>
 <?php } ?>
 			 	

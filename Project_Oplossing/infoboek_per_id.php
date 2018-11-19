@@ -12,8 +12,8 @@
         <div class="container">
             <div class="jumbotron jumbotron-fluid mt-3">
                 <div class="container mb-3">
-                    <h1 class="display-4 text-centre">detail informatie</h1>
-                    <p class="lead">"A bookstore is one of the only pieces of evidence we have that people are still thinking"</p>
+                    <h1 class="display-4 text-centre font-weight-bold">detail informatie</h1>
+                    <p class="cursief">"A bookstore is one of the only pieces of evidence we have that people are still thinking"</p>
                 </div>
             </div>
         </div>
