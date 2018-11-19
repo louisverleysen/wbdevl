@@ -1,6 +1,15 @@
 <?php include_once 'scripts/config.php';?>
 <?php include_once 'scripts/api.php';?>
+<?php
+$uwid = $_GET["BoekID"];
+$boekeninfo = CallAPI("GET", $DB . "/tblboekeninfo/" . $uwid );
+$boeken = CallAPI("GET", $DB . "/tblboeken/" . $uwid);
 
+
+
+
+
+?>
 
 
 <?php include_once 'views/shared/_header.inc';?>
@@ -24,10 +33,10 @@
                 <div class="content">
                 
                     <div class="row">
-                        <div class=" col-md-5" alt="foto4" width="100%"></div>
-                      
+                    <div class=" col-md-5"><img src="<?php print($boekeninfo["image"])?>"
+                                alt="foto4" width="100%"></div>
                         <div class=" col-md-7 hidden-lg">
-                   <h1></h1>
+                   <h1><?php print($boeken["Titel"])?></h1>
                             <table class="table table-bordered">
 
 
@@ -40,36 +49,34 @@
   <tbody>
   <tr>
       <th scope="row">Schrijver</th>
-      <td></td>
+      <td><?php print($boeken["Schrijver"])?></td>
       
     </tr>
     <tr>
       <th scope="row">Publicatiedatum:</th>
-      <td></td>
+      <td><?php print($boekeninfo["Publicatiedatum"])?></td>
       
     </tr>
     
     <tr>
       <th scope="row">pagina's</th>
-      <td></td>
+      <td><?php print($boekeninfo["Pagina"])?></td>
       
     </tr>
     <tr>
       <th scope="row">Uitgever</th>
-      <td></td>
+      <td><?php print($boekeninfo["Uitgever"])?></td>
       
     </tr>
     <tr>
       <th scope="row">Ondertitel</th>
-      <td></td>
+      <td><?php print($boekeninfo["Ondertitel"])     ?></td>
       
     </tr>
     <tr>
       <th scope="row">Uitvoering</th>
-      <td></td>
-      
+      <td><?php print($boekeninfo["Uitvoering"])?></td> 
     </tr>
-    
   </tbody>
 </table>
                
@@ -91,7 +98,7 @@
     </div>
     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
       <div class="card-body">
-    <p></p>
+    <p><?php print($boekeninfo["omschrijving"])?></p>
     </div>
     
   </div>

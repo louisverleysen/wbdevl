@@ -45,7 +45,7 @@ if(!empty($_POST)){
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-2"></div>
-             <div class="col-lg-6 col-md-8 login-box">
+             <div class="col-lg-6 col-md-8 login-box mb-5">
                 <div class="col-lg-12 login-key">
                     <i class="fa fa-key" aria-hidden="true"></i>
                 </div>
@@ -59,11 +59,11 @@ if(!empty($_POST)){
                         <form method="POST" action="<?php print($_SERVER['PHP_SELF']);?>" >
                             <div class="form-group">
                                 <label class="form-control-label" for="Email">EMAIL</label>
-                                <input type="text" id="Email" name="Email" class="form-control" placeholder="Email">
+                                <input type="text" id="Email" name="Email" class="form-control" placeholder=" Email">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="pwd" >PASWOORD</label>
-                                <input type="password" id="pwd" name="pwd" class="form-control" placeholder="paswoord">
+                                <input type="password" id="pwd" name="pwd" class="form-control" placeholder=" Paswoord">
                             </div>
                             <div class="input-group mb-3">
                             <div class="input-group-prepend">
