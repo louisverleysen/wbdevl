@@ -3,6 +3,22 @@
 <?php
 
 $boeken = CallAPI("GET", $DB . "/tblboeken");
+$lijn = array();
+if ($_SERVER['REQUEST_METHOD'] === "POST") { 
+    $lijn['BoekID'] = $_POST['BoekID'];
+    $lijn['Liked'] = $_POST['like'];
+   // header("location:book_view.php");
+
+
+$result = CallAPI("POST", $DB . "/tblboeken", json_encode($lijn));
+header("location:book_view.php");
+
+exit;
+} else {
+$boeken = CallAPI("GET", $DB . "/tblboeken");   
+} 
+
+
 
 function findInArray($arr, $value, $column = 0)
 {
@@ -77,6 +93,8 @@ if (!empty($_GET["edit"])) {
             </thead>
             <tbody>
 <?php
+var_dump($_POST);
+var_dump($lijn);
 //Overlopen van de vluchten en tonen van de gegevens.
 foreach ($boeken as $boek) {
     ?>
@@ -89,10 +107,15 @@ foreach ($boeken as $boek) {
                     
                     
                     <td>
-                    <a href="book_like.php?id=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-up"></i> </a> 
+                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                            <!--<a id=<?php $boek["BoekID"]?> > -->
+                            <button type="submit" name="Liked" value="<?php print($boek["Liked"]) + 1?>"><i class="fas fa-thumbs-up"></i></button>
+                        <!-- </a> -->
+                        </form>
+                    
                     <?php print($boek["Liked"])?>
     
-                        <a href="book_dislike.php?id=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-down"></i></a>
+                        <a href="book_dislike.php?BoekID=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-down"></i></a>
                         <?php print($boek["Disliked"])?>
                     </td>
                     <td>
