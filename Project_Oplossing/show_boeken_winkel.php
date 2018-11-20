@@ -31,9 +31,9 @@ function findInArray($arr, $value, $column = 0)
 </head>
 <main>
 <div class="container">
-<h1 class="my-4">Boeken winkels
+<h2 class="my-4">Boeken winkels
         <small>in de buurt</small>
-      </h1>
+      </h2>
       <div class="row">
     <?php
         foreach($boekenwinkel as $winkel){

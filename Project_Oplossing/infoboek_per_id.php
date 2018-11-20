@@ -36,7 +36,7 @@ $boeken = CallAPI("GET", $DB . "/tblboeken/" . $uwid);
                     <div class=" col-md-5"><img src="<?php print($boekeninfo["image"])?>"
                                 alt="foto4" width="100%"></div>
                         <div class=" col-md-7 hidden-lg">
-                   <h1><?php print($boeken["Titel"])?></h1>
+                   <h2><?php print($boeken["Titel"])?></h2>
                             <table class="table table-bordered">
 
 

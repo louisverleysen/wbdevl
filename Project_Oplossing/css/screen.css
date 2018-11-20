@@ -26,7 +26,25 @@ ul {
     list-style-type: none;
 }
 
+h1 {
+    font-family: 'Roboto Slab', serif;
+}
 
+h2 {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+p {
+    font-family: 'Titillium Web', sans-serif;
+}
+
+th {
+    font-family: 'Roboto Slab', serif;
+}
+
+td {
+    font-family: 'Titillium Web', sans-serif;
+}
 
 form a {
     color: #1B325F;
@@ -69,7 +87,7 @@ a.btn1:active {
     transform: scale(.97);
     background-color: darken(#9CC4E4, 15%);
     box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.30);
-    s
+
 }
 
 a.btn1:focus:hover {

@@ -21,7 +21,7 @@ function findInArray($arr, $value, $column = 0)
     <?php include_once 'views/shared/_navinlog.inc';?>
 </header>
 <main>
-    <section id="summary" class="container">
+    <section id="summary" class="container pt-3">
         <h1>Boeken Overzicht</h1>
 <?php
 //Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
@@ -66,7 +66,7 @@ if (!empty($_GET["edit"])) {
                     <th>Schrijver</th>
                     <th>Titel</th>
                     <th>Type</th>
-                    <th>like/dislike</th>
+                   <!-- <th>like/dislike</th> -->
                     <th>Delete</th>
                     <th>Edit</th>
                 </tr>
@@ -84,13 +84,13 @@ foreach ($boeken as $boek) {
                     
                     
                     
-                    <td>
+                    <!--<td>
                     <a href="book_like.php?id=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-up"></i> </a> 
                     <?php print($boek["Liked"])?>
     
                         <a href="book_dislike.php?id=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-down"></i></a>
                         <?php print($boek["Disliked"])?>
-                    </td>
+                    </td> -->
                     
                     <td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>
                     <td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td>

@@ -11,8 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
    
 
     $result = CallAPI("POST", $DB . "/tblklant", json_encode($lijn));
-    
-    header("location:login.php");
+    print_r($result);
+    header("location:klanttoevoegen.php");
     exit;
 } else {
     $klanten = CallAPI("GET", $DB . "/tblklant"); 
@@ -89,7 +89,7 @@ if ($klant["KlantID"] > $max) {
            <!-- Error Message -->
              </div>
                <div class="col-lg-6 login-btm login-button">
-                 <button type="submit" value="Sing Up" class="btn btn-outline-info"><a href="login.php">Registreer</a></button>
+                 <button type="submit" value="Sing Up" class="btn btn-outline-info"><a href="klanttoevoegen.php">Registreer</a></button>
               </div>
 		</div>
 							<!--	<script>

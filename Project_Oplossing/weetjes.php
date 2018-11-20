@@ -47,12 +47,14 @@ foreach ($weetjes as $weetje) {
           </div>
           
         </div>
+       
+        
         </div>
-        
-        
         <?php } ?>
+
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
+        <div class="col-md-5">
+        
           <!-- Categories Widget -->
           <div class="card my-3">
             <h5 class="card-header">Categorieën</h5>

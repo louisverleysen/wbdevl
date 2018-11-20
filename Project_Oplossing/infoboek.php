@@ -52,7 +52,7 @@ function findInArray($arr, $value, $column = 0)
                                 alt="foto4" width="100%"></div>
                       
                         <div class=" col-md-7 hidden-lg">
-                   <h1><?php print($boeken[$book]["Titel"])?></h1>
+                   <h2><?php print($boeken[$book]["Titel"])?></h2>
                             <table class="table table-bordered">
 
 

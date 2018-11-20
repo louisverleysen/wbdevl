@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 	<?php include 'views/shared/_navinlog.inc';?>
 </header>
 <main>
-    <section id="summary" class="container">
+    <section id="summary" class="container pt-3">
         <h1>Boeken toevoegen</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">

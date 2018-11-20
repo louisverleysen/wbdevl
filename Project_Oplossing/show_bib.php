@@ -26,9 +26,9 @@ function findInArray($arr, $value, $column = 0)
   <?php include 'views/shared/_head_bib.inc';?>
 </head>
 <main>
-<h1 class="my-4">Bibliotheken
+<h2 class="my-4">Bibliotheken
         <small>in de buurt</small>
-      </h1>
+      </h2>
       
 	  <div class="row">
     <?php

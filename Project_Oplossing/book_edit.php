@@ -30,9 +30,9 @@ if(!empty($_GET["boekID"])){
 
 <body>
 <header>
-<?php include_once 'views/shared/_nav.inc';?>
+<?php include_once 'views/shared/_navinlog.inc';?>
 </header>
-<section id="summary" class="container">
+<section id="summary" class="container pt-3">
         <h1>boek aanpassen</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
@@ -51,9 +51,7 @@ if(!empty($_GET["boekID"])){
                 <label for="Type">Type</label>
                 <select class="form-control" name="Type" id="Type">
                     <?php foreach ($Boek as $boek) {?>
-                        <option value="<?php print($boek["Type"])?>"<?php if($boek["Type"]){print("selected");} ?>>
-                            <?php print($boek["Type"])?>
-                        </option>
+                        <option value="<?php print($boek["Type"]) ?>"<?php if($boek["Type"]==$Boek["Type"]){print("selected");} ?>></option>
                     <?php }?>
                 </select>
             </div>

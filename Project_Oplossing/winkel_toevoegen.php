@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 	<?php include 'views/shared/_navinlog.inc';?>
 </header>
 <main>
-<section id="summary" class="container">
+<section id="summary" class="container pt-3">
         <h1>Winkel toevoegen</h1>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="form-group">
@@ -47,7 +47,7 @@ foreach ($winkels as $winkel) {
        </div>
 <div class="form-group">
     <label for="Description">info winkelketen</label>
-    <textarea class="form-control" id="Description" name="Description" rows="3"></textarea>
+    <textarea  class="form-control" id="Description" name="Description" rows="3"></textarea>
 </div>
 <div class="form-group">
        <label for="aantal">aantal boeken</label>
