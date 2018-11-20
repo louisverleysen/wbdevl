@@ -45,8 +45,8 @@
       </li>
      
     </ul>
-        <button class="btn btn-outline-success my-2 my-sm-0 m-4" type="submit" > <a href="klanttoevoegen.php">Registreer <i class="fas fa-user-plus"></i></a> </button>
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" > <a href="login.php">login <i class="fas fa-sign-in-alt"></i></a> </button>
+        <button class="btn btn-outline-info my-2 my-sm-0 m-4" type="submit" > <a href="klanttoevoegen.php">Registreer <i class="fas fa-user-plus"></i></a> </button>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" > <a href="login.php">login <i class="fas fa-sign-in-alt"></i></a> </button>
     </form>
   </div>
 </nav>

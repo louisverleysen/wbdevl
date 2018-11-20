@@ -63,5 +63,6 @@ foreach ($winkels as $winkel) {
 </form>
 </main>    
 </body>
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

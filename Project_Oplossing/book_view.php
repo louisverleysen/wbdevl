@@ -133,4 +133,6 @@ foreach ($boeken as $boek) {
         </table>
     </section>
 </main>
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

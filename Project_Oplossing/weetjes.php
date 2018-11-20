@@ -56,11 +56,14 @@ foreach ($weetjes as $weetje) {
           <!-- Categories Widget -->
           <div class="card my-3">
             <h5 class="card-header">Categorieën</h5>
+            <input id="search" type="search" onkeyup="myFunction()" placeholder="zoek je link">
             <div class="card-body">
+            
               <div class="row">
+              
                 <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
+                  <ul id="my-data" class="data-searchable">
+                    <li class="header" >
                       <a href="#">Boeken</a>
                     </li>
                     <li>
@@ -72,12 +75,15 @@ foreach ($weetjes as $weetje) {
                   </ul>
                 </div>
                 <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
+                  <ul  class="data-searchable">
+                    <li  >
                       <a href="#">Bibliotheken</a>
                     </li>
                     <li>
                       <a href="#">Registreer</a>
+                    </li>
+                    <li>
+                      <a href="#">Contact</a>
                     </li>
                   </ul>
                 </div>
@@ -85,6 +91,7 @@ foreach ($weetjes as $weetje) {
             </div>
           </div>
           
+    
           <!-- Side Widget -->
           <div class="card my-4">
             <h5 class="card-header">Wistje datje</h5>
@@ -111,7 +118,27 @@ foreach ($weetjes as $weetje) {
       
     </div>
     
-
- 
+<script>
+function myFunction() {
+  var input, filter, table, tr, a, i;
+  input = document.getElementById("search");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("my-data");
+  tr = table.getElementsByTagName("li");
+  for (i = 0; i < tr.length; i++) {
+    a = tr[i].getElementsByTagName("a")[0];
+    if (a) {
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+          
+          
+ <footer>
 <?php include_once 'views/shared/_footer.inc';?>
 </footer>

@@ -107,8 +107,6 @@ $boeken = CallAPI("GET", $DB . "/tblboeken/" . $uwid);
   </div>
   
 </div>
-
-
-
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

@@ -18,7 +18,7 @@ function findInArray($arr, $value, $column = 0)
 <?php include_once 'views/shared/_header.inc';?>
 <body>
 <header>
-    <?php include_once 'views/shared/_nav.inc';?>
+    <?php include_once 'views/shared/_navinlog.inc';?>
 </header>
 <main>
 <section id="summary" class="container pt-4">

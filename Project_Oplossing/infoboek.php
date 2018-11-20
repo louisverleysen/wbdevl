@@ -151,4 +151,6 @@ function topFunction() {
 </script>
 
 </body>
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

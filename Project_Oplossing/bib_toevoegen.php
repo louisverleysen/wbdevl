@@ -61,5 +61,6 @@ foreach ($bibliotheek as $bib) {
 
 </main>    
 </body>
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

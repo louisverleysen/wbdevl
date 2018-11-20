@@ -8,6 +8,26 @@ a.navbar-brand {
 
 }
 
+input#search {
+    margin-top: 10px;
+}
+
+[type=search] {
+    max-width: 200px;
+    padding: .5em;
+    display: block;
+    margin: 0 auto;
+}
+
+ul {
+    margin-top: 5px;
+    padding: 0;
+    text-align: center;
+    list-style-type: none;
+}
+
+
+
 form a {
     color: #1B325F;
 
@@ -90,7 +110,7 @@ div a.tekst:hover {
     font-size: 110%;
 }
 
-/*---login page-- */
+/*---login page--*/
 .login-box {
     margin-top: 75px;
     height: auto;
@@ -123,7 +143,7 @@ div a.tekst:hover {
 }
 
 input[type=text] {
-    background-color: #1A2226;
+    background-color: #9CC4E4;
     border: none;
     border-bottom: 2px solid #0DB8DE;
     border-top: 0px;
@@ -135,8 +155,21 @@ input[type=text] {
     color: #ECF0F5;
 }
 
+input[type=Email] {
+    background-color: #9CC4E4;
+    border: none;
+    border-bottom: 2px solid #0DB8DE;
+    border-top: 0px;
+    border-radius: 0px;
+    font-weight: bold;
+    outline: 0;
+    padding-left: 0px;
+    margin-bottom: 20px;
+    color: #ECF0F5;
+}
+
 input[type=password] {
-    background-color: #1A2226;
+    background-color: #9CC4E4;
     border: none;
     border-bottom: 2px solid #0DB8DE;
     border-top: 0px;
@@ -159,7 +192,7 @@ input[type=password] {
     box-shadow: none;
     border-bottom: 2px solid #0DB8DE;
     outline: 0;
-    background-color: #1A2226;
+    background-color: #3A89C9;
     color: #ECF0F5;
 }
 

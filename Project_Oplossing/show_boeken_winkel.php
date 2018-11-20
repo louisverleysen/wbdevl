@@ -86,6 +86,6 @@ function findInArray($arr, $value, $column = 0)
 </main>  
 </body>
 
-
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

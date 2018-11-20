@@ -36,7 +36,7 @@ function findInArray($arr, $value, $column = 0)
         <div class="col-lg-4 col-sm-6 portfolio-item">
         
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/Theoria.jpg" alt="fotos"></a>
+            <a href="#"><img class="card-img-top" src="<?php print($bib["imagebib"])?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($bib["Naambib"]);?></h4>
               <p class="card-text"><?php print($bib["openingsurenbib"]); ?></p>
@@ -74,5 +74,6 @@ function findInArray($arr, $value, $column = 0)
 
 </div>
 </main>
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

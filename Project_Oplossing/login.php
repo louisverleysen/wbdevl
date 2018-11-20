@@ -41,7 +41,7 @@ if(!empty($_POST)){
 <header>
 	<?php include 'views/shared/_nav.inc';?>
 </header>
-
+<main>
 <div class="container">
     <div class="row">
         <div class="col-lg-3 col-md-2"></div>
@@ -78,7 +78,7 @@ if(!empty($_POST)){
                                     <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
-                                    <button type="submit" class="btn btn-outline-primary"><a href="ingelogt.php">LOGIN</a></button>
+                                    <button type="submit" class="btn btn-outline-info"><a href="indexinlog.php">LOGIN</a></button>
                                 </div>
                             </div>
                         </form>
@@ -88,8 +88,9 @@ if(!empty($_POST)){
             </div>
         </div>
 
-
-
+</main>
+<footer>
 
 
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

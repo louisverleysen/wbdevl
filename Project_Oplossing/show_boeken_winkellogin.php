@@ -37,7 +37,7 @@ function findInArray($arr, $value, $column = 0)
         <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
         
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="images/<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
+            <a href="#"><img class="card-img-top" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($winkel["Naam"]);?></h4>
               <p class="card-text"><?php print($winkel["Description"]); ?></p>
@@ -84,5 +84,6 @@ function findInArray($arr, $value, $column = 0)
 </body>
 
 
-
+<footer>
 <?php include_once 'views/shared/_footer.inc';?>
+</footer>

@@ -63,4 +63,6 @@ if(!empty($_GET["boekID"])){
         </form>
     </section>
 </main>
+<footer>
 <?php require_once 'views/shared/_footer.inc';?>
+</footer>
