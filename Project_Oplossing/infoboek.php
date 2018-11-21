@@ -3,7 +3,7 @@
 
 
                     
-                <?php
+<?php
 
 $boekeninfo = CallAPI("GET", $DB . "/tblboekeninfo");
 $boeken = CallAPI("GET", $DB . "/tblboeken");
@@ -114,7 +114,7 @@ function findInArray($arr, $value, $column = 0)
       <h5 class="mb-0">
     
         <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Korte Omschrijving
+         Korte Omschrijving
         </button>
       </h5>
     </div>

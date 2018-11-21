@@ -25,35 +25,31 @@ function findInArray($arr, $value, $column = 0)
 </head>
 <main>
 <div class="container">
+<div class="post_content">
+      <div class="row">
+            <div class="col-8 m-0">
 <?php
 //Overlopen van de vluchten en tonen van de gegevens.
+
 foreach ($weetjes as $weetje) {
     ?>
-<div class="post_content">
 
-      <div class="row">
-
-        <div class="col-md-8">
-   
-          <h1 class="my-4"><?php print($weetje["hood_t"])?></h1>
-          <!-- Blog Post -->
-          <div class="card mb-4">
-            <img class="card-img-top" src="<?php print($weetje["image"])?>" alt="">
-            <div class="card-body">
-              <h3 class="card-title"><?php print($weetje["Titel"])?></h3>
-              <p class="card-text"><?php print($weetje["inhoud"])?></p>
-            </div>
-            
-          </div>
-          
+      
+              <h1 class="my-4"><?php print($weetje["hood_t"])?></h1>
+              <!-- Blog Post -->
+              <div class="card mb-4">
+                <img class="card-img-top" src="<?php print($weetje["image"])?>" alt="">
+                <div class="card-body">
+                  <h3 class="card-title"><?php print($weetje["Titel"])?></h3>
+                  <p class="card-text"><?php print($weetje["inhoud"])?></p>
+                </div>
+             </div>
+        <?php } ?>   
+              
         </div>
-       
         
-        </div>
-        <?php } ?>
-
         <!-- Sidebar Widgets Column -->
-        <div class="col-md-5">
+        <div class="col-4">
         
           <!-- Categories Widget -->
           <div class="card my-3">
@@ -109,7 +105,7 @@ foreach ($weetjes as $weetje) {
             </div>
           </div>
           </div>
-          
+          </div>
        
           
        
