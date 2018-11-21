@@ -12,7 +12,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $result = CallAPI("POST", $DB . "/tblboeken", json_encode($lijn));
     
-    header("location:book_viewlogin.php");
+    if($result == "1"){
+        header("location:book_viewlogin.php?add=yes");
+    }
+    else{
+        header("location:book_viewlogin.php?add=no");
+    }
     exit;
 } else {
     $boeken = CallAPI("GET", $DB . "/tblboeken");

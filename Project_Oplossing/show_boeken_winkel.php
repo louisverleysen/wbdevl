@@ -17,7 +17,26 @@ function findInArray($arr, $value, $column = 0)
 }
 
 ?>
+<?php
+//Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
+if (!empty($_GET["create"])) {
+    if ($_GET["create"] == "yes") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Verwijderen Succesvol!</strong> Geselecteerde boek verwijderd.
+        </div>
+        <?php
 
+    } elseif ($_GET["create"] == "no") {
+        ?>
+        <div class="alert alert-danger">
+        <strong>Verwijderen niet mogelijk!</strong> Dit boek kan niet verwijderd worden.
+        </div>
+        <?php
+}
+}
+
+?>
 
 
 

@@ -1,7 +1,7 @@
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';?>
 <?php
-$login = CallAPI("GET", $DB . "/tblklant");
+$logins = CallAPI("GET", $DB . "/tblklant");
 session_start();
 ?>
 <?php
@@ -9,7 +9,7 @@ session_start();
 if(!empty($_POST)){
     print_r($_POST);
 
-    if(!empty($_POST["Email"]) && array_key_exists($_POST["Email"],$login))
+    if(!empty($_POST["Email"]) && array_key_exists($_POST["Email"],$logins))
     {
         //login bestaat
         print("login gevonden ");
@@ -17,13 +17,13 @@ if(!empty($_POST)){
     //contSZroleren of de login en paswoord overeen komen
     $login = $_POST['Email'];
 
-    if($Logins[$login][2]==md5($_POST["pwd"])){
+    if($logins[$login][2]==md5($_POST["pwd"])){
         //print("login en pwd OK");
         $tijd = 0;
         if(!empty($_POST['keep'])){
             $tijd = time() + (31*24*60*60);
         }
-        setcookie ("login",$login, $tijd);
+        setcookie ("Email",$login, $tijd);
         header("location:ingelogt.php");
         exit;
     }
@@ -78,7 +78,7 @@ if(!empty($_POST)){
                                     <!-- Error Message -->
                                 </div>
                                 <div class="col-lg-6 login-btm login-button">
-                                    <button type="submit" class="btn btn-outline-info"><a href="indexinlog.php">LOGIN</a></button>
+                                    <button type="submit" class="btn btn-outline-info">LOGIN</button>
                                 </div>
                             </div>
                         </form>

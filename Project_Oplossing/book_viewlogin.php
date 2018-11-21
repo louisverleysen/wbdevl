@@ -25,6 +25,23 @@ function findInArray($arr, $value, $column = 0)
         <h1>Boeken Overzicht</h1>
 <?php
 //Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
+if (!empty($_GET["add"])) {
+    if ($_GET["add"] == "yes") {
+        ?>
+        <div class="alert alert-danger">
+        <strong>Verwijderen Succesvol!</strong> Geselecteerde boek verwijderd.
+        </div>
+        <?php
+
+    } if ($_GET["add"] == "no") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Toevoegen Succesvol!</strong> Er is een boek toegevoegd.
+        </div>
+        <?php
+}
+}
+//Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
 if (!empty($_GET["delete"])) {
     if ($_GET["delete"] == "yes") {
         ?>

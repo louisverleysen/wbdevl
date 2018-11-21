@@ -17,10 +17,10 @@ if(!empty($_GET["boekID"])){
         print($result);
 
         if($result == "1"){
-            header("location:book_view.php?edit=yes");
+            header("location:book_viewlogin.php?edit=yes");
         }
         else{
-            header("location:book_view.php?edit=no");
+            header("location:book_viewlogin.php?edit=no");
         }
         exit;
     }
@@ -49,11 +49,7 @@ if(!empty($_GET["boekID"])){
             </div>
             <div class="form-group">
                 <label for="Type">Type</label>
-                <select class="form-control" name="Type" id="Type">
-                    <?php foreach ($Boek as $boek) {?>
-                        <option value="<?php print($boek["Type"]) ?>"<?php if($boek["Type"]==$Boek["Type"]){print("selected");} ?>></option>
-                    <?php }?>
-                </select>
+                <input type="text" class="form-control" name="Type" id="Type" value="<?php echo $Boek["Type"] ?>">
             </div>
             <div class="form-group">
                 <input class="btn btn-primary" type="submit" value="Update boek" />

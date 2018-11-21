@@ -25,6 +25,26 @@ function findInArray($arr, $value, $column = 0)
 <head>
   <?php include 'views/shared/_head_bib.inc';?>
 </head>
+<?php
+//Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
+if (!empty($_GET["extra"])) {
+    if ($_GET["extra"] == "yes") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Verwijderen Succesvol!</strong> Geselecteerde boek verwijderd.
+        </div>
+        <?php
+
+    } elseif ($_GET["extra"] == "no") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Toevoegen Succesvol!</strong> Er is een winkel toegevoegt.
+        </div>
+        <?php
+}
+}
+
+?>
 <main>
 <h1 class="my-4">Bibliotheken
         <small>in de buurt</small>

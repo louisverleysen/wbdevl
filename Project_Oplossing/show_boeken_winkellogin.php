@@ -25,6 +25,26 @@ function findInArray($arr, $value, $column = 0)
 <head>
 <?php include 'views/shared/_head_winkel.inc';?>
 </head>
+<?php
+//Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
+if (!empty($_GET["extra"])) {
+    if ($_GET["extra"] == "yes") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Verwijderen Succesvol!</strong> Geselecteerde boek verwijderd.
+        </div>
+        <?php
+
+    } elseif ($_GET["extra"] == "no") {
+        ?>
+        <div class="alert alert-success">
+        <strong>Toevoegen Succesvol!</strong> Er is een winkel toegevoegt.
+        </div>
+        <?php
+}
+}
+
+?>
 <main>
 <div class="container">
 <h1 class="my-4">Boeken winkels
@@ -37,7 +57,7 @@ function findInArray($arr, $value, $column = 0)
         <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
         
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
+            <a href="#"><img class="card-img-top p-2" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($winkel["Naam"]);?></h4>
               <p class="card-text"><?php print($winkel["Description"]); ?></p>

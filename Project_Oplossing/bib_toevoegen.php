@@ -14,7 +14,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
     $result = CallAPI("POST", $DB . "/tblbib", json_encode($lijn));
     
-    header("location:show_boeken_winkellogin.php");
+    if($result == "1"){
+        header("location:show_biblogin.php?extra=yes");
+    }
+    else{
+        header("location:show_biblogin.php?extra=no");
+    }
     exit;
 } else {
     $bibliotheek = CallAPI("GET", $DB . "/tblbib");   
