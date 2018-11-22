@@ -60,11 +60,11 @@ if (!empty($_GET["create"])) {
         <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
         
           <div class="card h-100">
-            <a href="#"><img class="card-img-top p-2" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
+            <a href="toon_boeken_in_winkel.php?WinkelID=<?php print($winkel["WinkelID"])?>"><img class="card-img-top p-2" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($winkel["Naam"]);?></h4>
               <p class="card-text"><?php print($winkel["Description"]); ?></p>
-			  <a class="btn btn-info btn-lg" href="toon_boeken_in_winkel.php" role="button">beschikbare boeken <?php print($winkel["aantal"]); ?></a>
+              <a  href="toon_boeken_in_winkel.php?WinkelID=<?php print($winkel["WinkelID"])?>"><button type="button" class="btn btn-info">beschikbare boeken <?php print($winkel["aantal"]); ?></button></a>
           </div>
           </div>          
         </div>

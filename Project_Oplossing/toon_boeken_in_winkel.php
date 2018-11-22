@@ -1,5 +1,15 @@
 <?php include_once 'scripts/config.php';?>
 <?php include_once 'scripts/api.php';?>
+<?php
+$uwid = $_GET["WinkelID"];
+$boeken = CallAPI("GET", $DB . "/tblboeken/" . $uwid );
+
+
+print($uwid)
+
+
+
+?>
 
 <?php include_once 'views/shared/_header.inc';?>
 <body>
@@ -14,7 +24,7 @@
 <table class="table table-striped table-hover sortable">
             <thead>
                 <tr>
-                    <th>BoekID</th>
+                    <th>WinkelID</th>
                     <th>Schrijver</th>
                     <th>Titel</th>
                     <th>Type</th>
@@ -23,13 +33,16 @@
                 </tr>
             </thead>
             <tbody>
+<?php
+foreach($boeken as $boek){
+?>
                 <tr> 
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <td><?php print($boek["WinkelID"])?></td>
+                    <td><?php print($boek["Schrijver"])?></td>
+                    <td><?php print($boek["Titel"])?></td>
+                    <td><?php print($boek["Type"])?></td>
                     
-                    
+      
                     
                     <td>
                     <a href="book_like.php?id="><i class="fas fa-thumbs-up"></i> </a> 
@@ -44,6 +57,7 @@
                     <!--<td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>
                     <td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td> -->
                 </tr>
+                <?php } ?>  
             </tbody>
         </table>
         </section>

@@ -5,7 +5,7 @@ $uwid = $_GET["BoekID"];
 $boekeninfo = CallAPI("GET", $DB . "/tblboekeninfo/" . $uwid );
 $boeken = CallAPI("GET", $DB . "/tblboeken/" . $uwid);
 
-
+print($uwid)
 
 
 
