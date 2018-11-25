@@ -1,7 +1,8 @@
 <?php require_once 'scripts/config.php';?>
 <?php require_once 'scripts/api.php';?>
 <?php
-$logins = CallAPI("GET", $DB . "/tblklant");
+include_once("logins.inc");
+$logins = get_Logins();
 session_start();
 ?>
 <?php
@@ -24,7 +25,7 @@ if(!empty($_POST)){
             $tijd = time() + (31*24*60*60);
         }
         setcookie ("Email",$login, $tijd);
-        header("location:ingelogt.php");
+        header("location:indexinlog.php");
         exit;
     }
 }
@@ -58,8 +59,8 @@ if(!empty($_POST)){
 
                         <form method="POST" action="<?php print($_SERVER['PHP_SELF']);?>" >
                             <div class="form-group">
-                                <label class="form-control-label" for="Email">EMAIL</label>
-                                <input type="text" id="Email" name="Email" class="form-control" placeholder=" Email">
+                                <label class="form-control-label" for="Email">Login</label>
+                                <input type="text" id="Email" name="Email" class="form-control" placeholder="name">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="pwd" >PASWOORD</label>

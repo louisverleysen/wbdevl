@@ -1,6 +1,22 @@
 <?php include_once 'scripts/config.php';?>
 <?php include_once 'scripts/api.php';?>
 <?php
+include_once("logins.inc");
+$logins = get_logins();
+
+if(empty($_SESSION["Email"])){
+    if(empty($_COOKIE["Email"])){
+        header("location:login.php" , TRUE , 303);
+        exit;
+    }else{
+        $login = $_COOKIE["Email"];
+        $_SESSION["Email"] = $login;
+        
+    }
+    $naam = $logins[$login][0]." ".$logins[$login][1];
+}
+?>
+<?php
 
 $homeindex = CallAPI("GET", $DB . "/tblhome");
 
@@ -22,6 +38,7 @@ function findInArray($arr, $value, $column = 0)
 </header>
 <main>
 <section id="summary" class="container pt-4">
+<h1>welkom <?php print($naam) ?>!</h1>
 <div class="jumbotron primary mb-0 rounded-0" id="indexjumbo">
     <h1 class="display-3 font-weight-bold">de boeken hoek</h1>
     <p class="cursief">"There is more treasure in books than in all the pirate's loot on teasure island".</p>

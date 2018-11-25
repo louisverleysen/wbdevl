@@ -1,5 +1,6 @@
 <?php include_once 'scripts/config.php';?>
 <?php include_once 'scripts/api.php';?>
+
 <?php
 
 $homeindex = CallAPI("GET", $DB . "/tblhome");
@@ -21,7 +22,9 @@ function findInArray($arr, $value, $column = 0)
     <?php include_once 'views/shared/_nav.inc';?>
 </header>
 <main>
-<section id="summary" class="container pt-4">
+<section id="summary" class="container pt-3">
+
+
 <div class="jumbotron primary mb-0 rounded-0" id="indexjumbo">
     <h1 class="display-3 font-weight-bold">de boeken hoek</h1>
     <p class="cursief">"There is more treasure in books than in all the pirate's loot on teasure island".</p>

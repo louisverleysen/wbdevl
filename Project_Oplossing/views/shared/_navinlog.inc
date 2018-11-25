@@ -31,7 +31,7 @@
     </ul>
     <form class="form-inline my-2 my-lg-0">
         
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" > <a href="index.php">logout <i class="fas fa-sign-out-alt"></i></a> </button>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" > <a href="ingelogt.php">logout <i class="fas fa-sign-out-alt"></i></a> </button>
     </form>
   </div>
 </nav>

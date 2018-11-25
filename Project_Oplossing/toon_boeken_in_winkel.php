@@ -35,14 +35,15 @@ print($uwid)
             <tbody>
 <?php
 foreach($boeken as $boek){
+   if()
 ?>
                 <tr> 
                     <td><?php print($boek["WinkelID"])?></td>
-                    <td><?php print($boek["Schrijver"])?></td>
-                    <td><?php print($boek["Titel"])?></td>
-                    <td><?php print($boek["Type"])?></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     
-      
+                    <?php } ?>      
                     
                     <td>
                     <a href="book_like.php?id="><i class="fas fa-thumbs-up"></i> </a> 
@@ -57,7 +58,7 @@ foreach($boeken as $boek){
                     <!--<td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>
                     <td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td> -->
                 </tr>
-                <?php } ?>  
+                 
             </tbody>
         </table>
         </section>
