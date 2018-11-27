@@ -34,8 +34,15 @@ print($uwid)
             </thead>
             <tbody>
 <?php
+$uwid=0
+$tonen = array
 foreach($boeken as $boek){
-   if()
+    if($boek["WinkelID"]) == 1){
+        $tonen[] = $boek;
+    }else{
+        
+    }
+ 
 ?>
                 <tr> 
                     <td><?php print($boek["WinkelID"])?></td>
