@@ -27,7 +27,7 @@ function findInArray($arr, $value, $column = 0)
 <div class="container">
 <div class="post_content">
       <div class="row">
-            <div class="col-8 m-0">
+            <div class="col-md-8 m-0">
 <?php
 //Overlopen van de vluchten en tonen van de gegevens.
 
@@ -35,9 +35,10 @@ foreach ($weetjes as $weetje) {
     ?>
 
       
-              <h1 class="my-4"><?php print($weetje["hood_t"])?></h1>
+              
               <!-- Blog Post -->
               <div class="card mb-4">
+              <h1 class="my-4 pl-3"><?php print($weetje["hood_t"])?></h1>
                 <img class="card-img-top" src="<?php print($weetje["image"])?>" alt="">
                 <div class="card-body">
                   <h3 class="card-title"><?php print($weetje["Titel"])?></h3>
@@ -49,12 +50,12 @@ foreach ($weetjes as $weetje) {
         </div>
         
         <!-- Sidebar Widgets Column -->
-        <div class="col-4">
+        <div class="col-md-4">
         
           <!-- Categories Widget -->
           <div class="card my-3">
             <h5 class="card-header">Categorieën</h5>
-            <input id="search" type="search" onkeyup="myFunction()" placeholder="zoek je link">
+            <input id="search" class="col-md-4" type="search" onkeyup="myFunction()" placeholder="zoek je link">
             <div class="card-body">
             
               <div class="row">
@@ -73,8 +74,8 @@ foreach ($weetjes as $weetje) {
                   </ul>
                 </div>
                 <div class="col-lg-6">
-                  <ul  class="data-searchable">
-                    <li  >
+                  <ul id="my-data" class="data-searchable">
+                    <li class="header" >
                       <a href="#">Bibliotheken</a>
                     </li>
                     <li>

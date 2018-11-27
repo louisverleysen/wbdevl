@@ -47,7 +47,7 @@ foreach($contacten as $contact)
         <h4 class="pt-2">Contact</h4>
         <i class="fas fa-phone" style="color:#000"></i> <a href="tel:+"> <?php print($contact["gsm_nr"])?></a><br>
         <i class="fab fa-whatsapp" style="color:#000"></i> <a href="tel:+"><?php print($contact["telefoon_nr"])?></a><br>
-        <h4 class="pt-2">Email</h4>
+        <h4 class="pt-2 ">Email</h4>
         <i class="fa fa-envelope" style="color:#000"></i> <a href=""><?php print($contact["email"])?></a><br>
       </div>
   </div>

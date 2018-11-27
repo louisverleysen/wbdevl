@@ -37,11 +37,11 @@ function findInArray($arr, $value, $column = 0)
         <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
         
           <div class="card h-100">
-            <a href="#"><img class="card-img-top" src="<?php print($bib["imagebib"])?>" alt="fotos"></a>
+            <a href="toon_boeken_in_bib.php?BibID=<?php print($bib["BibID"])?>"><img class="card-img-top" src="<?php print($bib["imagebib"])?>" alt="fotos"></a>
             <div class="card-body">
               <h4 class="card-title"><?php print($bib["Naambib"]);?></h4>
               <p class="card-text"><?php print($bib["openingsurenbib"]); ?></p>
-			  <a class="btn btn-info btn-lg" href="toon_boeken_in_debib?>BoekID=<?php print($boek[$boeken]["BoekID"])?>" role="button">Bischikbare Boeken</a>
+			  <a class="btn btn-info btn-lg" href="toon_boeken_in_bib.php?BibID=<?php print($bib["BibID"])?>" role="button">Bischikbare Boeken</a>
           </div>
           </div>          
         </div>

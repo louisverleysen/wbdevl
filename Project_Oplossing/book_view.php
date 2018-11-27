@@ -78,14 +78,14 @@ if (!empty($_GET["edit"])) {
 }
 }
 ?>
-        <table class="table table-striped table-hover sortable">
+        <table class="table table-striped table-hover sortable container">
             <thead>
                 <tr>
                     <th>BoekID</th>
                     <th>Schrijver</th>
                     <th>Titel</th>
                     <th>Type</th>
-                    <th>like/dislike</th>
+                    
                     <th>meer info</th>
                     <!--<th>Delete</th>
                     <th>Edit</th>-->
@@ -93,8 +93,7 @@ if (!empty($_GET["edit"])) {
             </thead>
             <tbody>
 <?php
-var_dump($_POST);
-var_dump($lijn);
+
 //Overlopen van de vluchten en tonen van de gegevens.
 foreach ($boeken as $boek) {
     ?>
@@ -106,18 +105,7 @@ foreach ($boeken as $boek) {
                     
                     
                     
-                    <td>
-                        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                            <!--<a id=<?php $boek["BoekID"]?> > -->
-                            <button type="submit" name="Liked" value="<?php print($boek["Liked"]) + 1?>"><i class="fas fa-thumbs-up"></i></button>
-                        <!-- </a> -->
-                        </form>
                     
-                    <?php print($boek["Liked"])?>
-    
-                        <a href="book_dislike.php?BoekID=<?php print($boek["BoekID"])?>"><i class="fas fa-thumbs-down"></i></a>
-                        <?php print($boek["Disliked"])?>
-                    </td>
                     <td>
                     <a  href="infoboek_per_id.php?BoekID=<?php print($boek["BoekID"])?>"><button type="button" class="btn btn-info">Details...</button></a>
                     </td>

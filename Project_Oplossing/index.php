@@ -44,16 +44,41 @@ function findInArray($arr, $value, $column = 0)
 //Overlopen van de vluchten en tonen van de gegevens.
 foreach ($homeindex as $home) {
     ?>
-			 	<div class="col-sm-4 pb-4">
-			 		<img src="<?php print($home["image"])?>" alt="bib" class="img-fluid">
+			 	<div class="col-sm-6 col-lg-4 pb-4">
+			 		<a  href="<?php print($home["link"])?>"><img  src="<?php print($home["image"])?>" alt="bib" class="img-fluid"></a>
 					<a class="tekst" href="<?php print($home["link"])?>"><?php print($home["titel"])?></a>
 			 	</div>
 <?php } ?>
 			 	
 			 </div>
 			 </div>
-			</section>
+             <div>
+             <p class="lead p-3">
+             <button type="button" id="btnColor"  class="btn btn-info text-center">Kleur de webpagina</button>
+            </p>
+             </div>
+             
+             <script>
+             var button = document.getElementById("btnColor");
 
+             button.addEventListener('click', function () {
+                changeColor();
+                });
+
+            function changeColor() {
+            var x = Math.floor(Math.random() * 256);
+            var y = Math.floor(Math.random() * 256);
+            var z = Math.floor(Math.random() * 256);
+            var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+
+            document.body.style.backgroundColor = bgColor;
+
+
+            }
+
+             </script>
+			</section>
+            
 			</main>
 
 <footer>
