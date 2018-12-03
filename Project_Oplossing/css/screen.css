@@ -52,10 +52,11 @@ form a {
 }
 
 .jumbotron {
-    background-image: url(images/home/Boeken-Bieb.jpg) !important;
+
     background-size: cover;
     background-position: center;
     background-color: #E9F2F9;
+    background-image: url(images/home/Boeken-Bieb.jpg) !important;
 }
 
 p.cursief {
