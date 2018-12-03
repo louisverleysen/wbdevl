@@ -99,12 +99,12 @@ if (!empty($_GET["create"])) {
       </ul>
 
 </div>
-</main>
+</div>
 
 
 </main>  
-</body>
-
 <footer>
 <?php include_once 'views/shared/_footer.inc';?>
 </footer>
+</body>
+

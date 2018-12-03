@@ -13,10 +13,10 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $result = CallAPI("POST", $DB . "/tblklant", json_encode($lijn));
     print($result);
     if($result == "1"){
-        header("location:klanttoevoegen1.php?add=yes");
+        header("location:klanttoevoegen.php?add=yes");
     }
     else{
-        header("location:klanttoevoegen1.php?add=no");
+        header("location:klanttoevoegen.php?add=no");
     }
     exit;
 } else {
@@ -96,7 +96,7 @@ if (!empty($_GET["add"])) {
                     </div>
                     <div class="form-group">
 	                    <label class="form-control-label" for="password" >Confirm Paswoord</label>
-	                    <input type="password" id="password" name="password" class="form-control" placeholder=" *****">
+	                    <input type="password" id="password-cofirm" name="password" class="form-control" placeholder=" *****">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -114,8 +114,8 @@ if (!empty($_GET["add"])) {
                       </div>
                     </div>
                 </div>
-                			<script>
-						var paswoord = document.getElementById("paswoord"), confirm_paswoord = document.getElementById("paswoord");
+                			 <script>
+						var paswoord = document.getElementById("password"), confirm_paswoord = document.getElementById("password-confirm");
 
 						function validatePassword(){
 							if(paswoord.value != confirm_paswoord){

@@ -60,7 +60,7 @@ foreach ($weetjes as $weetje) {
             
               <div class="row">
               
-                <div class="col-lg-6">
+                <div class="col-lg-12">
                   <ul id="my-data" class="data-searchable">
                     <li class="header" >
                       <a href="#">Boeken</a>
@@ -71,16 +71,13 @@ foreach ($weetjes as $weetje) {
                     <li>
                       <a href="#">Boeken winkel</a>
                     </li>
-                  </ul>
-                </div>
-                <div class="col-lg-6">
-                  <ul id="my-data" class="data-searchable">
-                    <li class="header" >
+                    <li>
                       <a href="#">Bibliotheken</a>
                     </li>
                     <li>
                       <a href="#">Registreer</a>
                     </li>
+                    
                     <li>
                       <a href="#">Contact</a>
                     </li>

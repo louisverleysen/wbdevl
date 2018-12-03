@@ -52,6 +52,7 @@ foreach($contacten as $contact)
       </div>
   </div>
 </div>
+</div>
 </section>
 </main>
 <footer>
