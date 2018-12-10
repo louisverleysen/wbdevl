@@ -22,6 +22,8 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 } else {
     $boeken = CallAPI("GET", $DB . "/tblboeken");
     $informatie = CallAPI("GET", $DB . "/tblboekinformatie");
+    $bib = CallAPI("GET", $DB . "/tblbib");
+    $winkel = CallAPI("GET", $DB . "/tblwinkel");
 
     
 }
@@ -67,9 +69,29 @@ foreach ($boeken as $boek) {
                     <?php }?>
                 </select>
             </div>
+            <div class="form-group">
+                <label for="BibID">Beschikbaar in</label>
+                <select class="form-control" name="BibID" id="BibID">
+                    <?php foreach ($bib as $bibliotheek) {?>
+                        <option value="<?php print($boek["BibID"])?>">
+                            <?php print($bibliotheek["Naambib"])?>
+                        </option>
+                    <?php }?>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="WinkelID">Beschikbaar in</label>
+                <select class="form-control" name="WinkelID" id="WinkelID">
+                    <?php foreach ($winkel as $boekenwinkel) {?>
+                        <option value="<?php print($boek["WinkelID"])?>">
+                            <?php print($boekenwinkel["Naam"])?>
+                        </option>
+                    <?php }?>
+                </select>
+            </div>
            
             <div class="form-group">
-                <input class="btn btn-primary" type="submit" value="ADD Boek" />
+                <input class="btn btn-outline-info" type="submit" value="ADD Boek" />
             </div>
         </form>
     </section>

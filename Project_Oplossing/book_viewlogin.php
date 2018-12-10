@@ -109,8 +109,8 @@ foreach ($boeken as $boek) {
                         <?php print($boek["Disliked"])?>
                     </td> -->
                     
-                    <td><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Del</a></td>
-                    <td><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></td>
+                    <td><button type="button" class="btn btn-light"><a href="book_delete.php?boekID=<?php print($boek["BoekID"])?>">Delete</a></button></td>
+                    <td><button type="button" class="btn btn-light"><a href="book_edit.php?boekID=<?php print($boek["BoekID"])?>">Edit</a></button></td>
                 </tr>
 <?php
 }

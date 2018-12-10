@@ -11,8 +11,8 @@
           Boeken info
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="book_view.php">boeken tonen</a>
-                    <a class="dropdown-item" href="infoboek.php">alle boeken informatie</a>
+                    <a class="dropdown-item" href="book_view.php">Boeken tonen</a>
+                    <a class="dropdown-item" href="infoboek.php">Alle boeken informatie</a>
                     <!--<a class="dropdown-item" href="book_create.php">boeken toevoegen</a>-->
         </div>
       </li>
@@ -34,11 +34,11 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          ontspannings hoek
+          Ontspannings hoek
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="nut_van_lezen.php">Algemeen nut van lezen</a>
-                    <a class="dropdown-item" href="weetjes.php">boeken Weetjes</a>
+                    <a class="dropdown-item" href="weetjes.php">Boeken Weetjes</a>
                     <a class="dropdown-item" href="contact.php">Contact</a>
                     <!--<a class="dropdown-item" href="book_create.php">boeken toevoegen</a>-->
         </div>
@@ -46,7 +46,7 @@
      
     </ul>
         <button class="btn btn-outline-info my-2 my-sm-0 m-4" type="submit" > <a href="klanttoevoegen.php">Registreer <i class="fas fa-user-plus"></i></a> </button>
-        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" > <a href="login.php">login <i class="fas fa-sign-in-alt"></i></a> </button>
+        <button class="btn btn-outline-info my-2 my-sm-0" type="submit" > <a href="login.php">Login <i class="fas fa-sign-in-alt"></i></a> </button>
     </form>
   </div>
 </nav>

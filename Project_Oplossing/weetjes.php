@@ -3,6 +3,7 @@
 <?php
 
 $weetjes = CallAPI("GET", $DB . "/tblweetjes");
+$home = CallAPI("GET", $DB . "/tblhome");
 
 function findInArray($arr, $value, $column = 0)
 {
@@ -38,7 +39,7 @@ foreach ($weetjes as $weetje) {
               
               <!-- Blog Post -->
               <div class="card mb-4">
-              <h1 class="my-4 pl-3"><?php print($weetje["hood_t"])?></h1>
+              <h1 class=" pl-3"><?php print($weetje["hood_t"])?></h1>
                 <img class="card-img-top" src="<?php print($weetje["image"])?>" alt="">
                 <div class="card-body">
                   <h3 class="card-title"><?php print($weetje["Titel"])?></h3>
@@ -62,25 +63,14 @@ foreach ($weetjes as $weetje) {
               
                 <div class="col-lg-12">
                   <ul id="my-data" class="data-searchable">
-                    <li class="header" >
-                      <a href="#">Boeken</a>
-                    </li>
-                    <li>
-                      <a href="#">Boeken info</a>
-                    </li>
-                    <li>
-                      <a href="#">Boeken winkel</a>
-                    </li>
-                    <li>
-                      <a href="#">Bibliotheken</a>
-                    </li>
-                    <li>
-                      <a href="#">Registreer</a>
-                    </li>
+                    <?php
+                    foreach ($home as $links) {
+                      ?>
                     
-                    <li>
-                      <a href="#">Contact</a>
+                    <li class="header" >
+                      <a href="<?php print($links["link"])?>"><?php print($links["titel"])?></a>
                     </li>
+                  <?php } ?>
                   </ul>
                 </div>
               </div>
@@ -92,7 +82,7 @@ foreach ($weetjes as $weetje) {
           <div class="card my-4">
             <h5 class="card-header">Wistje datje</h5>
             <div class="card-body">
-           <span><b> …mensen met dyslexie vaak creatiever zijn dan mensen zonder?</b>Om problemen te omzeilen, leren ze al jong creatief denken. Andere mensen hebben dit niet nodig. Die werken daarom saai via de gekende wegen en zijn minder creatief.
+           <span><b> …mensen met dyslexie vaak creatiever zijn dan mensen zonder?</b> Om problemen te omzeilen, leren ze al jong creatief denken. Andere mensen hebben dit niet nodig. Die werken daarom saai via de gekende wegen en zijn minder creatief.
            </span> </div>
           </div>
         <!-- Side Widget -->
