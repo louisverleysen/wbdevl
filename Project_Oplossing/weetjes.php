@@ -57,6 +57,7 @@ foreach ($weetjes as $weetje) {
           <div class="card my-3">
             <h5 class="card-header">Categorieën</h5>
             <input id="search" class="col-md-4" type="search" onkeyup="myFunction()" placeholder="zoek je link">
+      
             <div class="card-body">
             
               <div class="row">
@@ -80,9 +81,9 @@ foreach ($weetjes as $weetje) {
     
           <!-- Side Widget -->
           <div class="card my-4">
-            <h5 class="card-header">Wistje datje</h5>
+            <h5 class="card-header">Wistje dat...</h5>
             <div class="card-body">
-           <span><b> …mensen met dyslexie vaak creatiever zijn dan mensen zonder?</b> Om problemen te omzeilen, leren ze al jong creatief denken. Andere mensen hebben dit niet nodig. Die werken daarom saai via de gekende wegen en zijn minder creatief.
+           <span><b>mensen met dyslexie vaak creatiever zijn dan mensen zonder?</b> Om problemen te omzeilen, leren ze al jong creatief denken. Andere mensen hebben dit niet nodig. Die werken daarom saai via de gekende wegen en zijn minder creatief.
            </span> </div>
           </div>
         <!-- Side Widget -->

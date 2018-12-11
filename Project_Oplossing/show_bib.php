@@ -26,6 +26,7 @@ function findInArray($arr, $value, $column = 0)
   <?php include 'views/shared/_head_bib.inc';?>
 </head>
 <main>
+<section>
 <h2 class="my-4">Bibliotheken
         <small>in de buurt</small>
       </h2>
@@ -34,7 +35,7 @@ function findInArray($arr, $value, $column = 0)
     <?php
         foreach($bibs as $bib){
         ?>
-        <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
+        <div class="col-lg-4 col-sm-6 portfolio-item p-3">
         
           <div class="card h-100">
             <a href="toon_boeken_in_bib.php?BibID=<?php print($bib["BibID"])?>"><img class="card-img-top" src="<?php print($bib["imagebib"])?>" alt="fotos"></a>
@@ -49,35 +50,9 @@ function findInArray($arr, $value, $column = 0)
       </div>    
       
 </div>    
- 
+</section>
         
 
-	  <div class="pt-4">
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
-
-</div>
 </main>
 <footer>
 <?php include_once 'views/shared/_footer.inc';?>

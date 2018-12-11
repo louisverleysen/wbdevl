@@ -50,14 +50,14 @@ if (!empty($_GET["create"])) {
 </head>
 <main>
 <div class="container">
-<h2 class="my-4">Boeken winkels
+<h2 class="my-2">Boeken winkels
         <small>in de buurt</small>
       </h2>
       <div class="row">
     <?php
         foreach($boekenwinkel as $winkel){
         ?>
-        <div class="col-lg-4 col-sm-6 portfolio-item pt-4">
+        <div class="col-lg-4 col-sm-6 portfolio-item p-3">
         
           <div class="card h-100">
             <a href="toon_boeken_in_winkel.php?WinkelID=<?php print($winkel["WinkelID"])?>"><img class="card-img-top p-2" src="<?php print($winkel["ImageUrl"]); ?>" alt="fotos"></a>
@@ -73,32 +73,7 @@ if (!empty($_GET["create"])) {
       
 </div>  
 
-	  <div class="pt-4">
-      <ul class="pagination justify-content-center">
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            <span class="sr-only">Previous</span>
-          </a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">1</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">2</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#">3</a>
-        </li>
-        <li class="page-item">
-          <a class="page-link" href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            <span class="sr-only">Next</span>
-          </a>
-        </li>
-      </ul>
 
-</div>
 </div>
 
 

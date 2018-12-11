@@ -27,6 +27,7 @@ function findInArray($arr, $value, $column = 0)
 <header>
     <?php include_once 'views/shared/_nav.inc';?>
 </header>
+<main>
 <section id="banner">
         <div class="container">
             <div class="jumbotron jumbotron-fluid mt-3">
@@ -107,7 +108,7 @@ function findInArray($arr, $value, $column = 0)
 </div>
 
         </div>
-    </section>
+    
     <div class="accordion container" id="accordionExample">
   <div class="card m-2 ">
     <div class="card-header" id="headingOne">
@@ -126,11 +127,13 @@ function findInArray($arr, $value, $column = 0)
   </div>
   
     </div>
+    
     <?php } ?>    
-  
+    
   </div>
   
 </div>
+</section>
 <script>
 // When the user scrolls down 20px from the top of the document, show the button
 window.onscroll = function() {scrollFunction()};
@@ -149,8 +152,8 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 </script>
+</main>
 
-</body>
 <footer>
 <?php include_once 'views/shared/_footer.inc';?>
 </footer>
