@@ -38,10 +38,11 @@ if(!empty($_POST)){
 ?>
 
 <?php require_once 'views/shared/_header.inc';?>
-<body>
+
 <header>
 	<?php include 'views/shared/_nav.inc';?>
 </header>
+<body>
 <main>
 <div class="container">
     <div class="row">
@@ -60,7 +61,7 @@ if(!empty($_POST)){
                         <form method="POST" action="<?php print($_SERVER['PHP_SELF']);?>" >
                             <div class="form-group">
                                 <label class="form-control-label" for="Email">Login</label>
-                                <input type="text" id="Email" name="Email" class="form-control" placeholder="name">
+                                <input type="text" id="Email" name="Email" class="form-control" placeholder=" Naam">
                             </div>
                             <div class="form-group">
                                 <label class="form-control-label" for="pwd" >PASWOORD</label>
@@ -90,6 +91,9 @@ if(!empty($_POST)){
         </div>
 
 </main>
+</body>
 <footer>
 <?php include_once 'views/shared/_footer.inc';?>
 </footer>
+
+    

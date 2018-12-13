@@ -13,10 +13,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
     $result = CallAPI("POST", $DB . "/tblklant", json_encode($lijn));
     print($result);
     if($result == "1"){
-        header("location:klanttoevoegen.php?add=yes");
+        header("location:klanttoevoegen.php?add=no");
     }
     else{
-        header("location:klanttoevoegen.php?add=no");
+        header("location:klanttoevoegen.php?add=yes");
+
+       
     }
     exit;
 } else {
@@ -34,14 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
 <?php
 //Indien een record verwijderd wordt, geven we een melding indien dit gelukt is of niet.
 if (!empty($_GET["add"])) {
-    if ($_GET["add"] == "no") {
+    if ($_GET["add"] == "yes") {
         ?>
         <div class="alert alert-success text-center m-4">
         <strong>Succesvol Geregistreert!</strong> U bent geregistreert.
         </div>
         <?php
 
-    } elseif ($_GET["add"] == "yes") {
+    } elseif ($_GET["add"] == "no") {
         ?>
         <div class="alert alert-danger">
         <strong>Verwijderen niet mogelijk!</strong> Dit boek kan niet verwijderd worden.
@@ -55,7 +57,7 @@ if (!empty($_GET["add"])) {
   <div class="col-lg-3 col-md-2"></div>
     <div class="col-lg-6 col-md-8 login-box mb-5">
         <div class="col-lg-12 login-key">
-            <i class="fas fa-user-plus" aria-hidden="true"></i>
+            <i class="fas fa-user-plus pt-5" aria-hidden="true"></i>
         </div>
         <div class="col-lg-12 login-title">
             Registreren
@@ -91,12 +93,12 @@ if (!empty($_GET["add"])) {
 	                    <input type="text" id="Email" name="Email" class="form-control" placeholder=" jan.degroote@gmail.com">
                     </div>
                     <div class="form-group">
-	                    <label class="form-control-label" for="password" >Paswoord</label>
-	                    <input type="password" id="password" name="password" class="form-control" placeholder=" *****">
+	                    <label class="form-control-label" for="password" ></label>
+                        <input class="form-control" type="password" name="password" placeholder="Password" id="password" required>
                     </div>
                     <div class="form-group">
-	                    <label class="form-control-label" for="password" >Confirm Paswoord</label>
-	                    <input type="password" id="password-cofirm" name="password" class="form-control" placeholder=" *****">
+	                    <label class="form-control-label" for="password" ></label>
+                        <input class="form-control" type="password" placeholder="Confirm Password" id="confirm_password" required>
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -110,23 +112,23 @@ if (!empty($_GET["add"])) {
                       <div class="col-lg-6 login-btm login-text">
                       </div>
                       <div class="col-lg-6 login-btm login-button">
-                        <input class="btn btn-outline-info" type="submit" value="Add bib" />                      
+                      <button type="submit" class="pure-button btn btn-outline-info">Registreer</button>                   
                       </div>
                     </div>
                 </div>
                 			 <script>
-						var paswoord = document.getElementById("password"), confirm_paswoord = document.getElementById("password-confirm");
+						    var password = document.getElementById("password"), confirm_password = document.getElementById("confirm_password");
 
-						function validatePassword(){
-							if(paswoord.value != confirm_paswoord){
-								confirm_paswoord.setCustomValidity("Paswoorden komen niet overeen");
-							} else{
-								confirm_paswoord.setCustomValidity('');
-								}
-							}
+                            function validatePassword(){
+                            if(password.value != confirm_password.value) {
+                                confirm_password.setCustomValidity("Paswoorden komen niet overeen");
+                            } else {
+                                confirm_password.setCustomValidity('');
+                            }
+                        }
 
-							paswoord.onchance = validatePassword;
-							confirm_paswoord.onkeyup = validatePassword;
+                        password.onchange = validatePassword;
+                        confirm_password.onkeyup = validatePassword;
 						
 						</script>
             </form>

@@ -36,8 +36,8 @@ function findInArray($arr, $value, $column = 0)
         foreach ($lezen as $lees) {
          ?>
                     <div class="row">
-                        <div class=" col-md-5"><img src="<?php print($lees["image"])?>" alt="foto4" width="100%"></div>
-                        <div class=" col-md-7 hidden-lg">
+                        <div class=" col-md-6"><img src="<?php print($lees["image"])?>" alt="foto4" width="100%"></div>
+                        <div class=" col-md-6 hidden-lg pb-4">
                    <h1><?php print($lees["title"])?></h1>
                    <div><?php print($lees["inhoud"])?></div>
                       
